@@ -9,9 +9,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 
-// If you have a real `useProject` hook, remove the fallback below and import it.
-// import { useProject } from "@/hooks/ApiCall";
-
 // Project type definition
 interface ProjectImage {
   url: string;
@@ -20,7 +17,6 @@ interface ProjectImage {
 interface Project {
   _id: string;
   title: string;
-  subtitle: string;
   description: string;
   technologies: string[];
   image: ProjectImage[];
@@ -42,36 +38,53 @@ interface ProjectsHookReturn {
 const projectsFallback: Project[] = [
   {
     _id: "1",
-    title: "The Social Chamber",
-    subtitle: "Room Booking Platform",
+    title: "Analytic Soccer",
     description:
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     image: [{ url: "/assets/images/hero_bg.png" }],
-    githubLink: "#",
-    liveLink: "#",
+    githubLink: "https://github.com/Kongkon-79/claude-website.git",
+    liveLink: "https://analyticsoccer.com",
   },
    {
     _id: "2",
-    title: "The Social Chamber",
-    subtitle: "Room Booking Platform",
+    title: "Vehicle Rental",
     description:
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     image: [{ url: "/assets/images/hero_bg.png" }],
-    githubLink: "#",
-    liveLink: "#",
+    githubLink: "https://github.com/Kongkon-79/kashhussain-website.git",
+    liveLink: "https://kashhussain-website.vercel.app",
   },
    {
     _id: "3",
-    title: "The Social Chamber",
-    subtitle: "Room Booking Platform",
+    title: "Yolo Heat",
     description:
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     image: [{ url: "/assets/images/hero_bg.png" }],
-    githubLink: "#",
-    liveLink: "#",
+    githubLink: "https://github.com/Kongkon-79/arronwh-website.git",
+    liveLink: "https://arronwh-website.vercel.app",
+  },
+   {
+    _id: "4",
+    title: "Perrys Town Orthodontics",
+    description:
+      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+    image: [{ url: "/assets/images/hero_bg.png" }],
+    githubLink: "https://github.com/Kongkon-79/dr_jameshman_frontend.git",
+    liveLink: "https://perrystownorthodontics.com",
+  },
+   {
+    _id: "5",
+    title: "Mireyags Website",
+    description:
+      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+    image: [{ url: "/assets/images/hero_bg.png" }],
+    githubLink: "https://github.com/Kongkon-79/mireyags-website.git",
+    liveLink: "https://mireyags-website.vercel.app",
   },
 ];
 

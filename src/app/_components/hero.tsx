@@ -14,10 +14,10 @@ import Link from "next/link";
 import { Download } from "lucide-react";
 
 const iconList = [
-  { icon: <FaFacebookF key="fb" />, label: "Facebook", bgColor: "#1877F2", hoverBgColor: "#155db4" },
-  { icon: <IoLogoWhatsapp key="wa" />, label: "WhatsApp", bgColor: "#25D366", hoverBgColor: "#1eae56" },
-  { icon: <FaLinkedinIn key="li" />, label: "LinkedIn", bgColor: "#0A66C2", hoverBgColor: "#084fa1" },
-  { icon: <FaGithub key="github" />, label: "Github", bgColor: "#181717", hoverBgColor: "#24292F" },
+  { icon: <FaFacebookF key="fb" />, label: "Facebook", bgColor: "#1877F2", hoverBgColor: "#155db4", url: "https://www.facebook.com/kongkon.jowarder/" },
+  { icon: <IoLogoWhatsapp key="wa" />, label: "WhatsApp", bgColor: "#25D366", hoverBgColor: "#1eae56", url: "#" },
+  { icon: <FaLinkedinIn key="li" />, label: "LinkedIn", bgColor: "#0A66C2", hoverBgColor: "#084fa1", url: "www.linkedin.com/in/kongkon-jowarder-50a12725b" },
+  { icon: <FaGithub key="github" />, label: "Github", bgColor: "#181717", hoverBgColor: "#24292F", url: "https://github.com/Kongkon-79" },
 ];
 
 const containerVariants = {
@@ -147,24 +147,26 @@ const HeroSection = () => {
                   border: `2px solid ${item.bgColor}`,
                 }}
               >
-                <motion.button
+                <motion.a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={item.label}
                   className="absolute inset-1 lg:inset-[5px] rounded-full shadow-md flex items-center justify-center text-white transition-all duration-300 hover:shadow-lg"
                   style={{
                     background: `linear-gradient(to bottom, ${item.bgColor}, #8b5cf6)`,
                   }}
-                  type="button"
                   onMouseEnter={(e) => {
-                    const btn = e.currentTarget as HTMLButtonElement;
+                    const btn = e.currentTarget as HTMLAnchorElement;
                     btn.style.boxShadow = `0 0 20px ${item.bgColor}60, 0 10px 20px rgba(0, 0, 0, 0.2)`;
                   }}
                   onMouseLeave={(e) => {
-                    const btn = e.currentTarget as HTMLButtonElement;
+                    const btn = e.currentTarget as HTMLAnchorElement;
                     btn.style.boxShadow = "0px 10px 15px 0px rgba(0,0,0,0.1), 0px 4px 6px 0px rgba(0,0,0,0.1)";
                   }}
                 >
                   {item.icon}
-                </motion.button>
+                </motion.a>
               </motion.div>
             ))}
           </motion.div>

@@ -5,13 +5,57 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
+import { useForm } from "react-hook-form";
+import emailjs from "emailjs-com";
+import { toast, ToastContainer } from "react-toastify";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import {
-  FaFacebookF,
-  FaLinkedinIn,
-} from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+
+const formSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address").min(1, "Email is required"),
+  phone: z.string().min(1, "Phone number is required"),
+  message: z.string().min(1, "Message is required"),
+});
 
 const ContactUsSection = () => {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = (data: z.infer<typeof formSchema>) => {
+    const serviceID = "service_av6kbe7";
+    const templateID = "template_oxbvadb";
+    const publicKey = "8YOyIWFngfzKrYeE8";
+
+    emailjs
+      .send(serviceID, templateID, data, publicKey)
+      .then(
+        () => {
+          toast.success("Message sent successfully!");
+          form.reset();
+        },
+        (error) => {
+          console.error(error);
+          toast.error("Failed to send message. Try again.");
+        }
+      );
+  };
+
   return (
     <section id="contact" className="pt-10 md:pt-2 pb-2 relative w-full overflow-hidden bg-white dark:bg-slate-950 site-section">
       {/* Background Decorations */}
@@ -96,62 +140,97 @@ const ContactUsSection = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white dark:bg-slate-900 rounded-[24px] p-4 md:p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-50 dark:border-slate-800"
             >
-              <form className="space-y-4">
-                {/* Name */}
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-600 dark:text-slate-300">Name</label>
-                  <Input
-                    placeholder="enter your name"
-                    className="h-14 rounded-xl bg-[#FFF8F6] dark:bg-slate-900 dark:border-slate-700 border border-[#FFEDE9] text-slate-900 dark:text-slate-100 placeholder:text-gray-400 dark:placeholder:text-slate-500 px-5 focus-visible:ring-1 focus-visible:ring-orange-200"
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                  {/* Name */}
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-sm font-medium text-slate-600 dark:text-slate-300">Name *</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="enter your name"
+                            {...field}
+                            className="h-14 rounded-xl bg-[#FFF8F6] dark:bg-slate-900 dark:border-slate-700 border border-[#FFEDE9] text-slate-900 dark:text-slate-100 placeholder:text-gray-400 dark:placeholder:text-slate-500 px-5 focus-visible:ring-1 focus-visible:ring-orange-200"
+                          />
+                        </FormControl>
+                        <FormMessage className="text-red-500 text-xs" />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                {/* Email */}
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-600 dark:text-slate-300">Email</label>
-                  <Input
-                    placeholder="you@gmail.com"
-                    className="h-14 rounded-xl bg-[#FFF8F6] dark:bg-slate-900 dark:border-slate-700 border border-[#FFEDE9] text-slate-900 dark:text-slate-100 placeholder:text-gray-400 dark:placeholder:text-slate-500 px-5 focus-visible:ring-1 focus-visible:ring-orange-200"
+                  {/* Email */}
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-sm font-medium text-slate-600 dark:text-slate-300">Email *</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="you@gmail.com"
+                            {...field}
+                            className="h-14 rounded-xl bg-[#FFF8F6] dark:bg-slate-900 dark:border-slate-700 border border-[#FFEDE9] text-slate-900 dark:text-slate-100 placeholder:text-gray-400 dark:placeholder:text-slate-500 px-5 focus-visible:ring-1 focus-visible:ring-orange-200"
+                          />
+                        </FormControl>
+                        <FormMessage className="text-red-500 text-xs" />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                {/* Message */}
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-600 dark:text-slate-300">Message</label>
-                  <Textarea
-                    placeholder="Tell me about your project..."
-                    className="min-h-[120px] rounded-xl bg-[#FFF8F6] dark:bg-slate-900 dark:border-slate-700 border border-[#FFEDE9] text-slate-900 dark:text-slate-100 placeholder:text-gray-400 dark:placeholder:text-slate-500 p-5 focus-visible:ring-1 focus-visible:ring-orange-200 resize-none"
+                  {/* Phone Number */}
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-sm font-medium text-slate-600 dark:text-slate-300">Phone Number *</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="tel"
+                            placeholder="+1 (555) 000-0000"
+                            {...field}
+                            className="h-14 rounded-xl bg-[#FFF8F6] dark:bg-slate-900 dark:border-slate-700 border border-[#FFEDE9] text-slate-900 dark:text-slate-100 placeholder:text-gray-400 dark:placeholder:text-slate-500 px-5 focus-visible:ring-1 focus-visible:ring-orange-200"
+                          />
+                        </FormControl>
+                        <FormMessage className="text-red-500 text-xs" />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                {/* Submit Button */}
-                <Button className="w-full h-11 md:h-12 lg:h-14 bg-[#FF7E47] hover:bg-[#F26D35] text-white text-lg font-bold rounded-xl shadow-lg shadow-orange-100 transition-all duration-300">
-                  Contact Me
-                </Button>
-              </form>
+                  {/* Message */}
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-sm font-medium text-slate-600 dark:text-slate-300">Message *</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Tell me about your project..."
+                            {...field}
+                            className="min-h-[120px] rounded-xl bg-[#FFF8F6] dark:bg-slate-900 dark:border-slate-700 border border-[#FFEDE9] text-slate-900 dark:text-slate-100 placeholder:text-gray-400 dark:placeholder:text-slate-500 p-5 focus-visible:ring-1 focus-visible:ring-orange-200 resize-none"
+                          />
+                        </FormControl>
+                        <FormMessage className="text-red-500 text-xs" />
+                      </FormItem>
+                    )}
+                  />
 
-              {/* Social Links */}
-              <div className="flex items-center gap-4 mt-8">
-                {[
-                  { icon: <FaFacebookF className="w-5 h-5" />, color: "bg-[#1877F2]", shadow: "shadow-blue-100" },
-                  { icon: <IoLogoWhatsapp className="w-6 h-6" />, color: "bg-[#25D366]", shadow: "shadow-green-100" },
-                  { icon: <FaLinkedinIn className="w-5 h-5" />, color: "bg-[#0A66C2]", shadow: "shadow-blue-100" },
-                ].map((item, index) => (
-                  <motion.a
-                    key={index}
-                    href="#"
-                    whileHover={{ scale: 1.1 }}
-                    className={`w-12 h-12 rounded-full ${item.color} text-white flex items-center justify-center shadow-md ${item.shadow} transition-all`}
-                  >
-                    {item.icon}
-                  </motion.a>
-                ))}
-              </div>
+                  {/* Submit Button */}
+                  <Button type="submit" className="w-full h-11 md:h-12 lg:h-14 bg-[#FF7E47] hover:bg-[#F26D35] text-white text-lg font-bold rounded-xl shadow-lg shadow-orange-100 transition-all duration-300">
+                    Contact Me
+                  </Button>
+                </form>
+              </Form>
             </motion.div>
           </div>
 
         </div>
       </div>
+      <ToastContainer position="bottom-right" />
     </section>
   );
 };

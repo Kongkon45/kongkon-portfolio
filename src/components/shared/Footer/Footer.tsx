@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import {
   FaFacebookF,
   FaLinkedinIn,
-  FaBehance,
-  FaDribbble,
+  FaGithub,
 } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { LuDownload } from "react-icons/lu";
@@ -59,15 +58,17 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex justify-center gap-4 mt-6">
             {[
-              { icon: <FaFacebookF />, color: "bg-[#1877F2]", shadow: "shadow-blue-100" },
-              { icon: <IoLogoWhatsapp />, color: "bg-[#25D366]", shadow: "shadow-green-100" },
-              { icon: <FaLinkedinIn />, color: "bg-[#0A66C2]", shadow: "shadow-blue-100" },
-              { icon: <FaBehance />, color: "bg-[#053EFF]", shadow: "shadow-blue-100" },
-              { icon: <FaDribbble />, color: "bg-[#EA4C89]", shadow: "shadow-pink-100" },
+              { icon: <FaFacebookF />, color: "bg-[#1877F2]", shadow: "shadow-blue-100", url: "https://www.facebook.com/kongkon.jowarder/", label: "Facebook" },
+              { icon: <IoLogoWhatsapp />, color: "bg-[#25D366]", shadow: "shadow-green-100", url: "#", label: "WhatsApp" },
+              { icon: <FaLinkedinIn />, color: "bg-[#0A66C2]", shadow: "shadow-blue-100", url: "www.linkedin.com/in/kongkon-jowarder-50a12725b", label: "LinkedIn" },
+              { icon: <FaGithub />, color: "bg-[#181717]", shadow: "shadow-slate-300", url: "https://github.com/Kongkon-79", label: "Github" },
             ].map((item, i) => (
               <motion.a
                 key={i}
-                href="#"
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.label}
                 whileHover={{ y: -5, scale: 1.1 }}
                 className={`w-12 h-12 rounded-full ${item.color} text-white flex items-center justify-center shadow-lg ${item.shadow} border-2 border-white transition-all`}
               >

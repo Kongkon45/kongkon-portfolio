@@ -8,6 +8,8 @@ import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import ScrollProgressBar from "@/components/providers/ScrollProgressBar";
 import ScrollToTopComponent from "@/components/providers/ScrollToTop";
 import ContactFab from "@/components/shared/ContactFab/ContactFab";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -33,6 +35,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <Navbar />
           {children}
+           <ToastContainer position="bottom-right"/>
           <ContactFab />
           <ScrollToTopComponent/>
           <Footer />
