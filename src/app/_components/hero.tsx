@@ -4,11 +4,9 @@ import { Button } from "@/components/ui/button";
 import {
   FaFacebookF,
   FaLinkedinIn,
-  FaDribbble,
-  FaBehance,
 } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
-// import { BsInstagram } from "react-icons/bs";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -19,8 +17,7 @@ const iconList = [
   { icon: <FaFacebookF key="fb" />, label: "Facebook", bgColor: "#1877F2", hoverBgColor: "#155db4" },
   { icon: <IoLogoWhatsapp key="wa" />, label: "WhatsApp", bgColor: "#25D366", hoverBgColor: "#1eae56" },
   { icon: <FaLinkedinIn key="li" />, label: "LinkedIn", bgColor: "#0A66C2", hoverBgColor: "#084fa1" },
-  { icon: <FaBehance key="behance" />, label: "Behance", bgColor: "#053EFF", hoverBgColor: "#0525D8" },
-  { icon: <FaDribbble key="db" />, label: "Dribbble", bgColor: "#EA4C89", hoverBgColor: "#d93d78" },
+  { icon: <FaGithub key="github" />, label: "Github", bgColor: "#181717", hoverBgColor: "#24292F" },
 ];
 
 const containerVariants = {
@@ -59,7 +56,7 @@ const buttonHover = {
   transition: { duration: 0.3, ease: "easeOut" },
 };
 
-const roles = ["UI/UX Designer", "UX Researcher", "Problem Solver", "Website Designer"];
+const roles = ["Frontend Developer", "Backend Developer", "Full Stack Developer", "Problem Solver"];
 
 const HeroSection = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -106,10 +103,10 @@ const HeroSection = () => {
       viewport={{ once: true, amount: 0.25 }}
       variants={containerVariants}
     >
-      <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+      <div className="w-full max-w-6xl grid md:grid-cols-5 gap-4 items-center">
 
         {/* LEFT CONTENT */}
-        <motion.div className="space-y-5" variants={fadeUp}>
+        <motion.div className="md:col-span-3 space-y-5" variants={fadeUp}>
           <motion.div
             className="inline-block px-4 py-1 bg-green-100 text-green-600 text-xs rounded-full shadow-lg dark:bg-emerald-900 dark:text-emerald-200"
             variants={badgeFromTop}
@@ -127,7 +124,7 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.h1 className="site-heading text-slate-950 dark:text-white" variants={fadeUp}>
-            Rifat Hossain
+            Kongkon Jowarder
           </motion.h1>
 
           <motion.h2
@@ -195,7 +192,7 @@ const HeroSection = () => {
 
         {/* RIGHT IMAGE */}
         <motion.div
-          className="relative flex justify-center"
+          className="md:col-span-2 relative flex justify-center"
           variants={fadeUp}
           whileHover={{
             y: -10,
@@ -216,7 +213,7 @@ const HeroSection = () => {
             }}
           />
           <Image
-            src="/assets/images/hero_bg.png"
+            src="/assets/images/hero_bg.jpeg"
             alt="hero image"
             width={1000}
             height={1000}
