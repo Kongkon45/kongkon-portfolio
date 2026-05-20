@@ -6,6 +6,7 @@ import MySkillsSection from './_components/my-skills'
 import TechnologySection from './_components/technology'
 import ProjectsSection from './_components/projects'
 import MyDesignSection from './_components/my-design'
+import { ToolsAndTechnology } from './_components/tools-and-technology'
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       <AboutMeSection/>
       <MySkillsSection/>
       <TechnologySection/>
+      <ToolsAndTechnology/>
       <ProjectsSection/>
       <MyDesignSection/>
       <ContactUsSection/>

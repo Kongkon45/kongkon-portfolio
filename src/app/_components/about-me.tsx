@@ -35,21 +35,21 @@ const floatingAnimation = (delay: number = 0): Variants => ({
 const AboutMeSection = () => {
   const stats = [
     {
-      value: "2+",
+      value: "3+",
       label: "Years of Experience",
       color: "text-orange-500",
       bg: "bg-orange-50",
       icon: Zap,
     },
     {
-      value: "20+",
+      value: "30+",
       label: "Happy Clients",
       color: "text-violet-600",
       bg: "bg-violet-50",
       icon: Users,
     },
     {
-      value: "30+",
+      value: "50+",
       label: "Projects Completed",
       color: "text-orange-500",
       bg: "bg-orange-50",
