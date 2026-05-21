@@ -107,7 +107,7 @@ const ContactUsSection = () => {
 
               {/* Main Avatar */}
               <Image
-                src="/assets/images/hero_bg.jpeg"
+                src="/assets/images/hero_bg.png"
                 alt="Contact Avatar"
                 width={500}
                 height={500}

@@ -89,7 +89,7 @@ const AboutMeSection = () => {
             {/* Character Image */}
             <div className="relative z-10 w-full max-w-[450px]">
               <Image
-                src="/assets/images/aboutme_bg.jpeg"
+                src="/assets/images/about_bg.png"
                 alt="About me illustration"
                 width={500}
                 height={500}

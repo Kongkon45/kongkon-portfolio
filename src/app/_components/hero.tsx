@@ -215,7 +215,7 @@ const HeroSection = () => {
             }}
           />
           <Image
-            src="/assets/images/hero_bg.jpeg"
+            src="/assets/images/hero_bg.png"
             alt="hero image"
             width={1000}
             height={1000}
