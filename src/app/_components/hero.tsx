@@ -97,13 +97,31 @@ const HeroSection = () => {
   }, []);
   return (
     <motion.section
-      className="site-section w-full flex justify-center px-4 relative bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900"
+      className="site-section w-full flex justify-center px-4 relative bg-white dark:bg-slate-950 overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
       variants={containerVariants}
     >
-      <div className="w-full max-w-6xl grid md:grid-cols-5 gap-4 items-center">
+      {/* Dot-grid pattern */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-40
+          bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:18px_18px]
+          dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)]"
+      />
+
+      {/* Ambient glow blob */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+          w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[500px] md:h-[500px]
+          rounded-full blur-3xl
+          bg-gradient-to-tr from-orange-500/10 to-violet-500/10
+          dark:from-orange-500/15 dark:to-violet-500/15"
+      />
+
+      <div className="w-full max-w-6xl grid md:grid-cols-5 gap-4 items-center relative z-10">
 
         {/* LEFT CONTENT */}
         <motion.div className="md:col-span-3 space-y-5" variants={fadeUp}>

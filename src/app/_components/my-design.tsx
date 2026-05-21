@@ -67,7 +67,24 @@ export default function MyDesignSection() {
   return (
     <section id="case-study" className="pt-10 md:pt-2 pb-2 relative w-full overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Decorations */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+        {/* Dot-grid pattern */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-40
+            bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:18px_18px]
+            dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)]"
+        />
+
+        {/* Ambient glow blob */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+            w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[500px] md:h-[500px]
+            rounded-full blur-3xl
+            bg-gradient-to-tr from-orange-500/10 to-violet-500/10
+            dark:from-orange-500/15 dark:to-violet-500/15"
+        />
         {/* Left Wavy Line */}
         <motion.svg 
           initial={{ pathLength: 0, opacity: 0 }}
@@ -93,7 +110,7 @@ export default function MyDesignSection() {
         />
       </div>
 
-      <div className="site-container container mx-auto px-4">
+      <div className="site-container container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-20">
           <motion.h2 

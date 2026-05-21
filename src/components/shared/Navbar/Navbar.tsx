@@ -139,12 +139,33 @@ export default function Navbar() {
 
   return (
     <motion.div
-      className="sticky top-3 z-50 w-full flex justify-center mt-4 px-3"
+      className="sticky top-0 z-50 w-full"
       initial="hidden"
       animate="visible"
       variants={navVariants}
     >
-      <div className="site-container w-full max-w-6xl bg-gradient-to-r from-orange-400 to-orange-500 dark:bg-slate-950/95 rounded-full px-6 py-1.5 md:py-3 flex items-center justify-between shadow-lg hover:shadow-xl transition-shadow duration-300 relative backdrop-blur-sm border border-white/10 dark:border-slate-700 text-slate-950 dark:text-slate-100">
+      <div className="w-full bg-white/95 dark:bg-slate-950/95 relative backdrop-blur-md border-b border-slate-200 dark:border-slate-800 text-slate-950 dark:text-slate-100 shadow-sm">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          {/* Dot-grid pattern */}
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-40
+              bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:18px_18px]
+              dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)]"
+          />
+          {/* Ambient glow blob */}
+          <div
+            aria-hidden
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+              w-[200px] h-[200px] md:w-[600px] md:h-[100px]
+              rounded-full blur-2xl
+              bg-gradient-to-tr from-orange-500/10 to-violet-500/10
+              dark:from-orange-500/15 dark:to-violet-500/15"
+          />
+        </div>
+        
+        {/* Content container */}
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 py-2 md:py-3 flex items-center justify-between relative z-10">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -165,7 +186,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <motion.div
-          className="hidden md:flex items-center gap-8 text-slate-950 dark:text-white font-medium"
+          className="hidden md:flex items-center gap-8 text-slate-950 dark:text-white font-medium relative z-10"
           initial="hidden"
           animate="visible"
         >
@@ -185,8 +206,8 @@ export default function Navbar() {
                 }}
                 className={`relative group text-sm font-semibold transition-colors duration-300 ${
                   activeHref === item.href
-                    ? "text-white"
-                    : "text-slate-950 dark:text-white hover:text-white"
+                    ? "text-primary"
+                    : "text-slate-950 dark:text-white hover:text-primary"
                 }`}
               >
                 {item.name}
@@ -203,7 +224,7 @@ export default function Navbar() {
 
         {/* Right Side */}
         <motion.div
-          className="flex items-center gap-4"
+          className="flex items-center gap-4 relative z-10"
           initial="hidden"
           animate="visible"
           transition={{ delay: 0.3 }}
@@ -280,6 +301,7 @@ export default function Navbar() {
 
           </motion.div>
         )}
+        </div>
       </div>
     </motion.div>
   );

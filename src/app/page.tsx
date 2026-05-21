@@ -3,7 +3,7 @@ import ContactUsSection from './_components/contact-us'
 import HeroSection from './_components/hero'
 import AboutMeSection from './_components/about-me'
 import MySkillsSection from './_components/my-skills'
-import TechnologySection from './_components/technology'
+// import TechnologySection from './_components/technology'
 import ProjectsSection from './_components/projects'
 import MyDesignSection from './_components/my-design'
 import { ToolsAndTechnology } from './_components/tools-and-technology'
@@ -14,7 +14,7 @@ const HomePage = () => {
       <HeroSection/>
       <AboutMeSection/>
       <MySkillsSection/>
-      <TechnologySection/>
+      {/* <TechnologySection/> */}
       <ToolsAndTechnology/>
       <ProjectsSection/>
       <MyDesignSection/>

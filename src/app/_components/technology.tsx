@@ -89,6 +89,23 @@ export default function TechnologySection() {
   return (
     <section id="technology" className="py-3 md:py-5 relative w-full overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Decoration */}
+      {/* Dot-grid pattern */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-40
+          bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:18px_18px]
+          dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)]"
+      />
+
+      {/* Ambient glow blob */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+          w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[500px] md:h-[500px]
+          rounded-full blur-3xl
+          bg-gradient-to-tr from-orange-500/10 to-violet-500/10
+          dark:from-orange-500/15 dark:to-violet-500/15"
+      />
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-64 opacity-20 pointer-events-none hidden lg:block">
          <svg viewBox="0 0 100 200" className="w-full h-full text-[#FF7639]">
             <path d="M10 10 Q 50 50 10 90 T 10 170" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />

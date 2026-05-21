@@ -177,11 +177,27 @@ export default function ProjectsSection(): JSX.Element {
     <section
       ref={containerRef}
       id="projects"
-      className="site-section relative bg-white dark:bg-[#030712] w-full"
+      className="site-section relative bg-white dark:bg-slate-950 w-full"
     >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Dot-grid pattern */}
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-40
+            bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:18px_18px]
+            dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)]"
+        />
 
-      
-     
+        {/* Ambient glow blob */}
+        <div
+          aria-hidden
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+            w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[500px] md:h-[500px]
+            rounded-full blur-3xl
+            bg-gradient-to-tr from-orange-500/10 to-violet-500/10
+            dark:from-orange-500/15 dark:to-violet-500/15"
+        />
+      </div>
         {/* Header */}
         <div className="text-center pt-2">
            <motion.h2 

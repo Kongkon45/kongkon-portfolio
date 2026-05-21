@@ -67,13 +67,31 @@ const AboutMeSection = () => {
   return (
     <motion.section
       id="about"
-      className="site-section w-full bg-white dark:bg-slate-950 px-6 overflow-hidden"
+      className="site-section relative w-full bg-white dark:bg-slate-950 px-6 overflow-hidden"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
       variants={staggerContainer}
     >
-      <div className="mx-auto max-w-7xl">
+      {/* Dot-grid pattern */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-40
+          bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:18px_18px]
+          dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)]"
+      />
+
+      {/* Ambient glow blob */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+          w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[500px] md:h-[500px]
+          rounded-full blur-3xl
+          bg-gradient-to-tr from-orange-500/10 to-violet-500/10
+          dark:from-orange-500/15 dark:to-violet-500/15"
+      />
+
+      <div className="mx-auto max-w-7xl relative z-10">
         {/* Top Section: Illustration and Text */}
         <div className="grid gap-12 lg:grid-cols-2 items-center mb-10">
           
