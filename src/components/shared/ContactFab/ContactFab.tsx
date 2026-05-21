@@ -4,7 +4,6 @@ import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { MessageSquare, Phone, Mail, X } from "lucide-react"
 import { IoLogoWhatsapp } from "react-icons/io"
-import { FaFacebookMessenger } from "react-icons/fa"
 
 export default function ContactFab() {
   const [open, setOpen] = useState(false)
@@ -17,27 +16,27 @@ export default function ContactFab() {
       bg: "bg-emerald-400",
       icon: <IoLogoWhatsapp className="w-5 h-5 text-white" />,
     },
-    {
-      id: "messenger",
-      label: "Messenger",
-      href: "https://m.me/",
-      bg: "bg-blue-500",
-      icon: <FaFacebookMessenger className="w-4 h-4 text-white" />,
+    // {
+    //   id: "messenger",
+    //   label: "Messenger",
+    //   href: "https://m.me/",
+    //   bg: "bg-blue-500",
+    //   icon: <FaFacebookMessenger className="w-4 h-4 text-white" />,
+    // },
+     {
+      id: "email",
+      label: "Email",
+      href: "mailto:kongkon4545@gmail.com",
+      bg: "bg-rose-400",
+      icon: <Mail className="w-4 h-4 text-white" />,
     },
     {
       id: "phone",
       label: "Call",
-      href: "tel:+1234567890",
+      href: "tel:+8801778934545",
       bg: "bg-emerald-400",
       icon: <Phone className="w-4 h-4 text-white" />,
-    },
-    {
-      id: "email",
-      label: "Email",
-      href: "mailto:hello@example.com",
-      bg: "bg-rose-400",
-      icon: <Mail className="w-4 h-4 text-white" />,
-    },
+    }
   ]
 
   return (
