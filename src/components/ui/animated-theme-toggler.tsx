@@ -20,12 +20,12 @@ export default function AnimatedThemeToggler({
       onClick={onToggle}
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       aria-pressed={isDark}
-      className="relative grid h-12 md:h-14 w-12 md:w-14 place-items-center rounded-full bg-[#ff7a00] shadow-lg"
+      className="relative grid h-10 md:h-11 w-10 md:w-11 place-items-center rounded-full bg-[#ff7a00] shadow-lg"
       whileTap={{ scale: 0.96 }}
       whileHover={{ scale: 1.04 }}
     >
       <motion.span
-        className="grid h-9 w-9 place-items-center rounded-full bg-[#e9edf3] text-[#5f6671]"
+        className="grid h-8 w-8 place-items-center rounded-full bg-[#e9edf3] text-[#5f6671]"
         animate={{ rotate: isDark ? 180 : 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >

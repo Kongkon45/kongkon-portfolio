@@ -10,16 +10,13 @@ import Link from "next/link";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 
 // Project type definition
-interface ProjectImage {
-  url: string;
-}
 
 interface Project {
   _id: string;
   title: string;
   description: string;
   technologies: string[];
-  image: ProjectImage[];
+  image: string;
   githubLink: string;
   liveLink: string;
 }
@@ -42,7 +39,7 @@ const projectsFallback: Project[] = [
     description:
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: [{ url: "/assets/images/hero_bg.png" }],
+    image: "/assets/images/analytic_soccer.jpeg",
     githubLink: "https://github.com/Kongkon-79/claude-website.git",
     liveLink: "https://analyticsoccer.com",
   },
@@ -52,7 +49,7 @@ const projectsFallback: Project[] = [
     description:
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: [{ url: "/assets/images/hero_bg.png" }],
+    image: "/assets/images/kash_hussain.jpeg",
     githubLink: "https://github.com/Kongkon-79/kashhussain-website.git",
     liveLink: "https://kashhussain-website.vercel.app",
   },
@@ -62,7 +59,7 @@ const projectsFallback: Project[] = [
     description:
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: [{ url: "/assets/images/hero_bg.png" }],
+    image: "/assets/images/yolo_heat.jpeg",
     githubLink: "https://github.com/Kongkon-79/arronwh-website.git",
     liveLink: "https://arronwh-website.vercel.app",
   },
@@ -72,19 +69,29 @@ const projectsFallback: Project[] = [
     description:
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: [{ url: "/assets/images/hero_bg.png" }],
+    image: "/assets/images/perrystown.jpeg",
     githubLink: "https://github.com/Kongkon-79/dr_jameshman_frontend.git",
     liveLink: "https://perrystownorthodontics.com",
   },
    {
     _id: "5",
-    title: "Mireyags Website",
+    title: "Axiom Wellness",
     description:
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: [{ url: "/assets/images/hero_bg.png" }],
+    image: "/assets/images/axiom_wellness.jpeg",
     githubLink: "https://github.com/Kongkon-79/mireyags-website.git",
     liveLink: "https://mireyags-website.vercel.app",
+  },
+   {
+    _id: "5",
+    title: "GolfKO",
+    description:
+      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+    image: "/assets/images/matchplay_golf.jpeg",
+    githubLink: "https://github.com/Kongkon-79/matchplaygolf_frontend.git",
+    liveLink: "https://golfko.co.uk",
   },
 ];
 
@@ -114,7 +121,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
           <div className="relative w-full md:w-1/2 overflow-hidden rounded-[1.3rem] h-[150px] md:min-h-[300px] bg-slate-50 dark:bg-slate-800">
             <Link href={`/project/${project._id}`}>
               <Image
-                src={project.image?.[0]?.url || "/placeholder.svg"}
+                src={project.image || "/placeholder.svg"}
                 alt={project.title}
                 fill
                 className="object-contain group-hover:scale-110 transition-transform duration-700"

@@ -165,7 +165,7 @@ export default function Navbar() {
         </div>
         
         {/* Content container */}
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 py-2 md:py-3 flex items-center justify-between relative z-10">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 py-2 flex items-center justify-between relative z-10">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -179,7 +179,7 @@ export default function Navbar() {
               alt="hero image"
               width={100}
               height={100}
-              className="w-[70px] h-11 md:h-[54px] object-contain relative z-10"
+              className="w-[70px] h-11 md:h-16 object-contain relative z-10"
             />
           </Link>
         </motion.div>
