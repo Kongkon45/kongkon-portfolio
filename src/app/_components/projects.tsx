@@ -83,8 +83,8 @@ const projectsFallback: Project[] = [
     githubLink: "https://github.com/Kongkon-79/mireyags-website.git",
     liveLink: "https://mireyags-website.vercel.app",
   },
-   {
-    _id: "5",
+  {
+    _id: "6",
     title: "GolfKO",
     description:
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
@@ -108,18 +108,18 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
   const scale = useTransform(progress, [start, 1], [1, targetScale]);
 
   return (
-    <div id="project" className="h-[92vh]  w-full flex items-center  justify-center sticky top-0">
+    <div className="w-full flex items-center justify-center py-5 sticky top-16 md:top-20">
       <motion.div
         style={{
           scale,
-          top: `calc(5vh + ${index *20}px)`,
+          top: `calc(4vh + ${index * 14}px)`,
         }}
         className="relative w-full container origin-top px-4"
       >
-        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit md:h-[340px] px-6 shadow-lg dark:shadow-2xl ">
+        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit md:h-[380px] px-4 md:px-6 shadow-lg dark:shadow-2xl">
           {/* Image */}
-          <div className="relative w-full md:w-1/2 overflow-hidden rounded-[1.3rem] h-[150px] md:min-h-[300px] bg-slate-50 dark:bg-slate-800">
-            <Link href={`/project/${project._id}`}>
+          <div className="relative w-full md:w-1/2 overflow-hidden rounded-[1.3rem] h-[180px] md:min-h-[340px] bg-slate-50 dark:bg-slate-800">
+            <Link href={`/project/${project._id}`} aria-label={`Open ${project.title} details`}>
               <Image
                 src={project.image || "/placeholder.svg"}
                 alt={project.title}
@@ -130,12 +130,12 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
           </div>
 
           {/* Content */}
-          <div className="flex flex-col flex-1 p-1 md:p-6 lg:p-8 xl:p-10 text-slate-900 dark:text-slate-100 ">
+          <div className="flex flex-col flex-1 p-2 md:p-6 lg:p-8 xl:p-10 text-slate-900 dark:text-slate-100">
             <CardHeader className="p-0 mb-5">
               <CardTitle className="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {project.title}
               </CardTitle>
-              <CardDescription className="text-slate-600 dark:text-slate-300 line-clamp-2 md:line-clamp-4 text-sm md:text-base leading-relaxed">
+              <CardDescription className="text-slate-600 dark:text-slate-300 line-clamp-3 md:line-clamp-4 text-sm md:text-base leading-relaxed">
                 {project.description}
               </CardDescription>
             </CardHeader>
@@ -151,13 +151,23 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
 
               <div className="flex gap-4 pt-1 md:pt-4">
                 <Button asChild variant="outline" className="flex-1 bg-transparent border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/5 rounded-xl h-10 md:h-12">
-                  <a href={project.githubLink || "#"} target="_blank" rel="noopener noreferrer">
-                    <FaGithub className="mr-2 h-4 w-4" /> Code
+                  <a
+                    href={project.githubLink || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${project.title} source code on GitHub`}
+                  >
+                    <FaGithub className="mr-2 h-4 w-4" /> Source Code
                   </a>
                 </Button>
                 <Button asChild className="flex-1 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 border-none rounded-xl h-10 md:h-12 shadow-lg shadow-blue-500/10">
-                  <a href={project.liveLink || "#"} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" /> Live
+                  <a
+                    href={project.liveLink || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open live demo of ${project.title}`}
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                   </a>
                 </Button>
               </div>
@@ -206,7 +216,7 @@ export default function ProjectsSection(): JSX.Element {
         />
       </div>
         {/* Header */}
-        <div className="text-center pt-2">
+        <div className="text-center pt-2 pb-3 md:pb-4">
            <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -225,7 +235,7 @@ export default function ProjectsSection(): JSX.Element {
           </motion.div>
         </div>
 
-      <div className="relative w-full ">
+      <div className="relative w-full">
         {isLoading ? (
           <div className="h-screen flex items-center justify-center px-8">
             <div className="h-[480px] w-full max-w-5xl bg-white/5 rounded-[2.5rem] animate-pulse" />
@@ -235,7 +245,7 @@ export default function ProjectsSection(): JSX.Element {
             Unable to load projects.
           </div>
         ) : (
-          <div className="flex flex-col items-center ">
+          <div id="project" className="flex flex-col items-center -mt-2 md:-mt-4 pb-6 md:pb-8">
             {projects?.map((project: Project, index: number) => (
               <ProjectCard
                 key={project._id || index}
