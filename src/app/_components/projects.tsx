@@ -45,13 +45,13 @@ const projectsFallback: Project[] = [
   },
    {
     _id: "2",
-    title: "Vehicle Rental",
+    title: "Car Check AI",
     description:
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     image: "/assets/images/kash_hussain.jpeg",
     githubLink: "https://github.com/Kongkon-79/kashhussain-website.git",
-    liveLink: "https://kashhussain-website.vercel.app",
+    liveLink: "https://carcheckai.co.uk",
   },
    {
     _id: "3",

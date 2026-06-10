@@ -5,7 +5,7 @@ import AboutMeSection from './_components/about-me'
 import MySkillsSection from './_components/my-skills'
 // import TechnologySection from './_components/technology'
 import ProjectsSection from './_components/projects'
-import MyDesignSection from './_components/my-design'
+// import MyDesignSection from './_components/my-design'
 import { ToolsAndTechnology } from './_components/tools-and-technology'
 
 const HomePage = () => {
@@ -17,7 +17,7 @@ const HomePage = () => {
       {/* <TechnologySection/> */}
       <ToolsAndTechnology/>
       <ProjectsSection/>
-      <MyDesignSection/>
+      {/* <MyDesignSection/> */}
       <ContactUsSection/>
     </div>
   )

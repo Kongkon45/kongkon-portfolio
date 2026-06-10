@@ -204,7 +204,7 @@ function OrbitingRing({ items, radius, duration, reverse = false, iconSize = ICO
 
 export function ToolsAndTechnology({ imageSrc }: { imageSrc?: string }) {
   return (
-    <section className="site-section relative w-full overflow-hidden bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800/50">
+    <section id="technologies" className="site-section relative w-full overflow-hidden bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800/50">
       {/* CSS keyframes */}
       <style>{`
         @keyframes orbit-cw  { from { transform: rotate(0deg); }   to { transform: rotate(360deg);  } }

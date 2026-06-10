@@ -87,7 +87,7 @@ const tools: Tool[] = [
 
 export default function TechnologySection() {
   return (
-    <section id="technology" className="py-3 md:py-5 relative w-full overflow-hidden bg-white dark:bg-slate-950">
+    <section id="technologies" className="py-3 md:py-5 relative w-full overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Decoration */}
       {/* Dot-grid pattern */}
       <div

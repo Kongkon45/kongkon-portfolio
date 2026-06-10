@@ -94,8 +94,9 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.12 }}
             className="text-slate-500 dark:text-slate-400 mt-6 text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
           >
-            Have a project in mind? Let&apos;s talk about how a solid full-stack solution
-            can bring your idea to life from API design to pixel-perfect UI.
+            Have a project in mind? Let&apos;s talk about how a solid full-stack
+            solution can bring your idea to life from API design to
+            pixel-perfect UI.
           </motion.p>
 
           <motion.div
@@ -114,12 +115,23 @@ const Footer = () => {
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <a href={`mailto:${email}?subject=CV%20Request`} aria-label="Request CV by email">
+              <a
+                href={`mailto:${email}?subject=CV%20Request`}
+                aria-label="Request CV by email"
+              >
                 <Button
                   variant="outline"
                   className="border-violet-200 text-violet-600 hover:bg-violet-50 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-white/10 font-bold text-base md:text-lg px-10 py-5 md:py-6 rounded-xl border-2 w-[240px] flex items-center justify-center gap-2"
                 >
-                  Get My CV <LuDownload className="w-5 h-5" />
+                  <Link
+                    className="flex items-center gap-2"
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://drive.google.com/file/d/1yaVz2n-OfoDR6ruPVPrcUaAlIPjpWEjl/view?usp=sharing"
+                  >
+                    Get My CV <LuDownload className="w-5 h-5" />
+                  </Link>
                 </Button>
               </a>
             </motion.div>
@@ -145,8 +157,8 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-              Full Stack Developer specialising in the MERN stack. Turning ideas into
-              fast, scalable web apps.
+              Full Stack Developer specialising in the MERN stack. Turning ideas
+              into fast, scalable web apps.
             </p>
           </div>
 
@@ -210,7 +222,8 @@ const Footer = () => {
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400 dark:text-slate-500">
           <span>© {currentYear} Kongkon Jowarder. All rights reserved.</span>
           <span>
-            Built with <span className="text-orange-500 font-semibold">Next.js</span> &amp;{" "}
+            Built with{" "}
+            <span className="text-orange-500 font-semibold">Next.js</span> &amp;{" "}
             <span className="text-violet-500 font-semibold">Tailwind CSS</span>
           </span>
         </div>

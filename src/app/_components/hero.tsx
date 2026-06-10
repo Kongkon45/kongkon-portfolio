@@ -1,23 +1,44 @@
-"use client"
+"use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  FaFacebookF,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Download } from "lucide-react";
+import { LuDownload } from "react-icons/lu";
 
 const iconList = [
-  { icon: <FaFacebookF key="fb" />, label: "Facebook", bgColor: "#1877F2", hoverBgColor: "#155db4", url: "https://www.facebook.com/kongkon.jowarder/" },
-  { icon: <IoLogoWhatsapp key="wa" />, label: "WhatsApp", bgColor: "#25D366", hoverBgColor: "#1eae56", url: "#" },
-  { icon: <FaLinkedinIn key="li" />, label: "LinkedIn", bgColor: "#0A66C2", hoverBgColor: "#084fa1", url: "www.linkedin.com/in/kongkon-jowarder-50a12725b" },
-  { icon: <FaGithub key="github" />, label: "Github", bgColor: "#181717", hoverBgColor: "#24292F", url: "https://github.com/Kongkon-79" },
+  {
+    icon: <FaFacebookF key="fb" />,
+    label: "Facebook",
+    bgColor: "#1877F2",
+    hoverBgColor: "#155db4",
+    url: "https://www.facebook.com/kongkon.jowarder/",
+  },
+  {
+    icon: <IoLogoWhatsapp key="wa" />,
+    label: "WhatsApp",
+    bgColor: "#25D366",
+    hoverBgColor: "#1eae56",
+    url: "#",
+  },
+  {
+    icon: <FaLinkedinIn key="li" />,
+    label: "LinkedIn",
+    bgColor: "#0A66C2",
+    hoverBgColor: "#084fa1",
+    url: "www.linkedin.com/in/kongkon-jowarder-50a12725b",
+  },
+  {
+    icon: <FaGithub key="github" />,
+    label: "Github",
+    bgColor: "#181717",
+    hoverBgColor: "#24292F",
+    url: "https://github.com/Kongkon-79",
+  },
 ];
 
 const containerVariants = {
@@ -39,7 +60,6 @@ const badgeFromTop = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-
 const iconBingHover = {
   scale: 1.15,
   rotate: [0, -10, 10, -5, 5, 0],
@@ -56,7 +76,12 @@ const buttonHover = {
   transition: { duration: 0.3, ease: "easeOut" },
 };
 
-const roles = ["Frontend Developer", "Backend Developer", "Full Stack Developer", "Problem Solver"];
+const roles = [
+  "Frontend Developer",
+  "Backend Developer",
+  "Full Stack Developer",
+  "Problem Solver",
+];
 
 const HeroSection = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -122,7 +147,6 @@ const HeroSection = () => {
       />
 
       <div className="w-full max-w-6xl grid md:grid-cols-5 gap-4 items-center relative z-10">
-
         {/* LEFT CONTENT */}
         <motion.div className="md:col-span-3 space-y-5" variants={fadeUp}>
           <motion.div
@@ -131,17 +155,23 @@ const HeroSection = () => {
             whileHover={{
               scale: 1.05,
               boxShadow: "0 8px 25px rgba(34, 197, 94, 0.3)",
-              transition: { duration: 0.3 }
+              transition: { duration: 0.3 },
             }}
           >
             ✨ Available for freelance
           </motion.div>
 
-          <motion.p className="text-slate-600 dark:text-slate-300 text-lg md:text-xl lg:text-2xl font-semibold leading-normal" variants={fadeUp}>
+          <motion.p
+            className="text-slate-600 dark:text-slate-300 text-lg md:text-xl lg:text-2xl font-semibold leading-normal"
+            variants={fadeUp}
+          >
             Hi, I am
           </motion.p>
 
-          <motion.h1 className="site-heading text-slate-950 dark:text-white" variants={fadeUp}>
+          <motion.h1
+            className="site-heading text-slate-950 dark:text-white"
+            variants={fadeUp}
+          >
             Kongkon Jowarder
           </motion.h1>
 
@@ -150,7 +180,9 @@ const HeroSection = () => {
             variants={fadeUp}
           >
             {currentText}
-            <span className={`inline-block w-1 h-full bg-orange-500 ml-1 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}></span>
+            <span
+              className={`inline-block w-1 h-full bg-orange-500 ml-1 ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity duration-100`}
+            ></span>
           </motion.h2>
 
           {/* Social */}
@@ -180,7 +212,8 @@ const HeroSection = () => {
                   }}
                   onMouseLeave={(e) => {
                     const btn = e.currentTarget as HTMLAnchorElement;
-                    btn.style.boxShadow = "0px 10px 15px 0px rgba(0,0,0,0.1), 0px 4px 6px 0px rgba(0,0,0,0.1)";
+                    btn.style.boxShadow =
+                      "0px 10px 15px 0px rgba(0,0,0,0.1), 0px 4px 6px 0px rgba(0,0,0,0.1)";
                   }}
                 >
                   {item.icon}
@@ -193,9 +226,9 @@ const HeroSection = () => {
           <motion.div className="flex flex-wrap gap-4 pt-3" variants={fadeUp}>
             <motion.div whileHover={buttonHover} whileTap={{ scale: 0.98 }}>
               <Link href="#contact">
-              <Button className="bg-orange-500 hover:bg-orange-600 rounded-md px-8 h-10 md:h-11 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300">
-                Hire Me
-              </Button>
+                <Button className="bg-orange-500 hover:bg-orange-600 rounded-md px-8 h-10 md:h-11 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300">
+                  Hire Me
+                </Button>
               </Link>
             </motion.div>
 
@@ -204,7 +237,15 @@ const HeroSection = () => {
                 variant="outline"
                 className="border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white rounded-md px-8 h-10 md:h-11 font-bold shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Resume <Download className="w-6 h-6 "/>
+                <Link
+                  className="flex items-center gap-2"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://drive.google.com/file/d/1yaVz2n-OfoDR6ruPVPrcUaAlIPjpWEjl/view?usp=sharing"
+                >
+                  Resume <LuDownload className="w-6 h-6 " />
+                </Link>
               </Button>
             </motion.div>
           </motion.div>
@@ -217,7 +258,7 @@ const HeroSection = () => {
           whileHover={{
             y: -10,
             rotate: [0, -2, 2, 0],
-            transition: { duration: 0.8, ease: "easeInOut" }
+            transition: { duration: 0.8, ease: "easeInOut" },
           }}
         >
           <motion.div
@@ -267,7 +308,7 @@ const HeroSection = () => {
                 className="absolute left-1/2 -translate-x-1/2 w-[3px] h-[40%] bg-gradient-to-b from-orange-400 via-orange-500 to-purple-600 rounded-full shadow-[0_0_12px_rgba(249,115,22,0.5)]"
               />
             </div>
-            
+
             {/* Subtle Reflection */}
             <div className="absolute top-[15%] left-[20%] w-[4px] h-[10px] bg-white opacity-20 rounded-full blur-[1px]" />
           </div>
@@ -277,19 +318,29 @@ const HeroSection = () => {
             {[0, 1].map((i) => (
               <motion.div
                 key={i}
-                animate={{ 
+                animate={{
                   y: [0, 6, 0],
-                  opacity: [0.1, 0.6, 0.1]
+                  opacity: [0.1, 0.6, 0.1],
                 }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity, 
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
                   delay: i * 0.4,
-                  ease: "easeInOut" 
+                  ease: "easeInOut",
                 }}
                 className="text-orange-500/60"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={i === 1 ? "-mt-3" : ""}>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={i === 1 ? "-mt-3" : ""}
+                >
                   <path d="M7 10l5 5 5-5" />
                 </svg>
               </motion.div>
@@ -298,7 +349,7 @@ const HeroSection = () => {
         </div>
 
         {/* Minimalist Text */}
-        <motion.span 
+        <motion.span
           animate={{ opacity: [0.4, 0.7, 0.4] }}
           transition={{ duration: 3, repeat: Infinity }}
           className="mt-1 text-[7px] md:text-[8px] font-black tracking-[0.8em] text-slate-400 uppercase select-none"
