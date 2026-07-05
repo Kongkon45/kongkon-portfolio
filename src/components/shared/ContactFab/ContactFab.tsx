@@ -12,7 +12,7 @@ export default function ContactFab() {
     {
       id: "whatsapp",
       label: "WhatsApp",
-      href: "https://wa.me/",
+      href: "https://wa.me/8801778934545",
       bg: "bg-emerald-400",
       icon: <IoLogoWhatsapp className="w-5 h-5 text-white" />,
     },

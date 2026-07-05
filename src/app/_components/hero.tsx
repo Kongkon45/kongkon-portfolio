@@ -23,7 +23,7 @@ const iconList = [
     label: "WhatsApp",
     bgColor: "#25D366",
     hoverBgColor: "#1eae56",
-    url: "#",
+    url: "https://wa.me/8801778934545",
   },
   {
     icon: <FaLinkedinIn key="li" />,
