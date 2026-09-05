@@ -45,6 +45,37 @@ const projectsFallback: Project[] = [
   },
    {
     _id: "2",
+    title: "SideQuote",
+    description:
+      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+    image: "/assets/images/sidequote.jpeg",
+    githubLink: "https://github.com/Kongkon-79/jolynn_frontend.git",
+    liveLink: "https://sidequote.cloud",
+  },
+   {
+    _id: "3",
+    title: "GolfKO",
+    description:
+      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+    image: "/assets/images/matchplay_golf.jpeg",
+    githubLink: "https://github.com/Kongkon-79/matchplaygolf_frontend.git",
+    liveLink: "https://golfko.co.uk",
+  },
+
+  {
+    _id: "4",
+    title: "Humidor411",
+    description:
+      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+    image: "/assets/images/Humidor411.jpg",
+    githubLink: "https://github.com/Kongkon-79/beloose-website.git",
+    liveLink: "https://humidor411.com",
+  }, 
+   {
+    _id: "5",
     title: "Car Check AI",
     description:
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
@@ -54,17 +85,7 @@ const projectsFallback: Project[] = [
     liveLink: "https://carcheckai.co.uk",
   },
    {
-    _id: "3",
-    title: "BeatBoks Music",
-    description:
-      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: "/assets/images/beatboksmusic.jpeg",
-    githubLink: "https://github.com/Kongkon-79/arronwh-website.git",
-    liveLink: "https://beatboksmusic.com",
-  },
-   {
-    _id: "4",
+    _id: "6",
     title: "Perrys Town Orthodontics",
     description:
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
@@ -73,26 +94,19 @@ const projectsFallback: Project[] = [
     githubLink: "https://github.com/Kongkon-79/dr_jameshman_frontend.git",
     liveLink: "https://perrystownorthodontics.com",
   },
-  //  {
-  //   _id: "5",
-  //   title: "Axiom Wellness",
-  //   description:
-  //     "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
-  //   technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-  //   image: "/assets/images/axiom_wellness.jpeg",
-  //   githubLink: "https://github.com/Kongkon-79/mireyags-website.git",
-  //   liveLink: "https://mireyags-website.vercel.app",
-  // },
-  // {
-  //   _id: "6",
-  //   title: "GolfKO",
-  //   description:
-  //     "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
-  //   technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-  //   image: "/assets/images/matchplay_golf.jpeg",
-  //   githubLink: "https://github.com/Kongkon-79/matchplaygolf_frontend.git",
-  //   liveLink: "https://golfko.co.uk",
-  // },
+   {
+    _id: "7",
+    title: "Axiom Wellness",
+    description:
+      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+    image: "/assets/images/axiom_wellness.jpeg",
+    githubLink: "https://github.com/Kongkon-79/mireyags-website.git",
+    liveLink: "https://axiomwellness.shop",
+  },
+
+  
+ 
 ];
 
 // Simple fallback hook if your real hook isn't present in the workspace.

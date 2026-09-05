@@ -242,7 +242,7 @@ const HeroSection = () => {
                   download
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://drive.google.com/file/d/1yaVz2n-OfoDR6ruPVPrcUaAlIPjpWEjl/view?usp=sharing"
+                  href="https://drive.google.com/file/d/113WEca0kk90aVrssR61K5sQDemd9ILOb/view?usp=sharing"
                 >
                   Resume <LuDownload className="w-6 h-6 " />
                 </Link>
