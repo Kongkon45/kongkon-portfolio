@@ -17,6 +17,7 @@ interface Project {
   description: string;
   technologies: string[];
   image: string;
+  role?: string;
   githubLink: string;
   liveLink: string;
 }
@@ -37,70 +38,76 @@ const projectsFallback: Project[] = [
     _id: "1",
     title: "Analytic Soccer",
     description:
-      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: "/assets/images/analytic_soccer.jpeg",
+      "A football analytics platform featuring dynamic player profiles, performance statistics, subscription payments, and a role-protected admin dashboard.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth"],
+    role: "Frontend Developer",
+    image: "/assets/images/projects/analytic_soccer.jpeg",
     githubLink: "https://github.com/Kongkon-79/claude-website.git",
     liveLink: "https://analyticsoccer.com",
   },
    {
     _id: "2",
-    title: "SideQuote",
+    title: "SideQuote — Local Service Marketplace",
     description:
-      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: "/assets/images/sidequote.jpeg",
+      "A multi-role local services marketplace that helps customers discover trusted professionals, request quotes, and communicate directly. Includes dedicated business and admin dashboards for service management, moderation, and analytics.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth"],
+    role: "Frontend Developer",
+    image: "/assets/images/projects/side_quote.jpeg",
     githubLink: "https://github.com/Kongkon-79/jolynn_frontend.git",
     liveLink: "https://sidequote.cloud",
   },
    {
     _id: "3",
-    title: "GolfKO",
+    title: "GolfKO — Golf Tournament Platform",
     description:
-      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: "/assets/images/matchplay_golf.jpeg",
+      "A multi-role golf tournament platform for creating paid events, managing participants, generating draws, scheduling rounds, and tracking results through player, organizer, and admin dashboards.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth"],
+    role: "Frontend Developer",
+    image: "/assets/images/projects/golfko.jpeg",
     githubLink: "https://github.com/Kongkon-79/matchplaygolf_frontend.git",
     liveLink: "https://golfko.co.uk",
   },
 
-  {
-    _id: "4",
-    title: "Humidor411",
-    description:
-      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: "/assets/images/Humidor411.jpg",
-    githubLink: "https://github.com/Kongkon-79/beloose-website.git",
-    liveLink: "https://humidor411.com",
-  }, 
+  // {
+  //   _id: "4",
+  //   title: "Humidor411",
+  //   description:
+  //     "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
+  //   technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+  //   image: "/assets/images/Humidor411.jpg",
+  //   githubLink: "https://github.com/Kongkon-79/beloose-website.git",
+  //   liveLink: "https://humidor411.com",
+  // }, 
    {
-    _id: "5",
-    title: "Car Check AI",
+    _id: "4",
+    title: "AI Car Check — UK Vehicle History Platform",
     description:
-      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: "/assets/images/kash_hussain.jpeg",
+      "A UK vehicle-history platform providing MOT, tax, mileage, safety, and ownership insights, with premium reports, Stripe payments, AI assistance, and a complete admin dashboard.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth"],
+    role: "Frontend Developer",
+    image: "/assets/images/projects/ai_car_check.jpeg",
     githubLink: "https://github.com/Kongkon-79/kashhussain-website.git",
     liveLink: "https://carcheckai.co.uk",
   },
    {
-    _id: "6",
-    title: "Perrys Town Orthodontics",
+    _id: "5",
+    title: "Perrystown Orthodontics — Healthcare Booking Platform",
     description:
-      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: "/assets/images/perrystown.jpeg",
+      "A responsive orthodontic care platform featuring consultation booking, dentist referrals, dynamic treatment content, and a comprehensive CMS-style admin dashboard.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth"],
+    role: "Frontend Developer",
+    image: "/assets/images/projects/Perrys.jpeg",
     githubLink: "https://github.com/Kongkon-79/dr_jameshman_frontend.git",
     liveLink: "https://perrystownorthodontics.com",
   },
    {
-    _id: "7",
+    _id: "6",
     title: "Axiom Wellness",
     description:
-      "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    image: "/assets/images/axiom_wellness.jpeg",
+      "A responsive research-products e-commerce platform featuring advanced product discovery, persistent cart management, Stripe and Cash on Delivery checkout, customer order tracking, and a data-driven admin dashboard.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth"],
+    role: "Frontend Developer",
+    image: "/assets/images/projects/axiom-wellness.png",
     githubLink: "https://github.com/Kongkon-79/mireyags-website.git",
     liveLink: "https://axiomwellness.shop",
   },
@@ -130,7 +137,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
         }}
         className="relative w-full container origin-top px-4"
       >
-        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit md:h-[380px] px-4 md:px-6 shadow-lg dark:shadow-2xl">
+        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit md:h-[420px] px-4 md:px-6 shadow-lg dark:shadow-2xl">
           {/* Image */}
           <div className="relative w-full md:w-1/2 overflow-hidden rounded-[1.3rem] h-[180px] md:min-h-[340px] bg-slate-50 dark:bg-slate-800">
             <Link href={`/project/${project._id}`} aria-label={`Open ${project.title} details`}>
@@ -152,11 +159,12 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
               <CardDescription className="text-slate-600 dark:text-slate-300 line-clamp-3 md:line-clamp-4 text-sm md:text-base leading-relaxed">
                 {project.description}
               </CardDescription>
+              <p><strong className="">Role : </strong>{project?.role}</p>
             </CardHeader>
 
             <CardContent className="p-0 mt-auto space-y-4">
               <div className="flex flex-wrap gap-2">
-                {project.technologies?.slice(0, 4).map((tech: string, i: number) => (
+                {project.technologies?.slice(0, 6).map((tech: string, i: number) => (
                   <span key={i} className="px-3 py-1 text-[10px] uppercase font-bold tracking-widest bg-slate-100 dark:bg-white/5 text-blue-600 dark:text-blue-400 border border-slate-300 dark:border-white/10 rounded-lg">
                     {tech.trim()}
                   </span>
