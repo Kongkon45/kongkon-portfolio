@@ -128,7 +128,7 @@ const Footer = () => {
                     download
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://drive.google.com/file/d/113WEca0kk90aVrssR61K5sQDemd9ILOb/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1hz2z9zjvrtFuKtAmwNvTsdBRJRcBRhE8/view?usp=sharing"
                   >
                     Get My CV <LuDownload className="w-5 h-5" />
                   </Link>
