@@ -168,7 +168,7 @@ const MySkillsSection = () => {
           <h2 className="site-heading">
             My <span className="text-orange-500 italic">Skills</span>
           </h2>
-          <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-r from-orange-400 to-violet-500" />
+          <div className="site-heading-divider" />
         </motion.div>
 
         {/* Cards Grid */}

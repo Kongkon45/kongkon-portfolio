@@ -236,6 +236,7 @@ export function ToolsAndTechnology({ imageSrc }: { imageSrc?: string }) {
           <h2 className="site-heading">
             Tools & <span className="text-orange-500">Technology</span>
           </h2>
+          <div className="site-heading-divider mx-auto" />
           <p className="mt-3 text-slate-500 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
             A visual overview of the technologies and tools I work with daily.
           </p>

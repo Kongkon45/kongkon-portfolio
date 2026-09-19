@@ -129,7 +129,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
   const scale = useTransform(progress, [start, 1], [1, targetScale]);
 
   return (
-    <div className="w-full flex items-center justify-center py-5 sticky top-16 md:top-20">
+    <div className="w-full flex items-center justify-center py-2 md:py-3 sticky top-16 md:top-20">
       <motion.div
         style={{
           scale,
@@ -137,9 +137,9 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
         }}
         className="relative w-full container origin-top px-4"
       >
-        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit md:h-[420px] px-4 md:px-6 shadow-lg dark:shadow-2xl">
+        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit md:h-[380px] px-4 md:px-6 shadow-lg dark:shadow-2xl">
           {/* Image */}
-          <div className="relative w-full md:w-1/2 overflow-hidden rounded-[1.3rem] h-[180px] md:min-h-[340px] bg-slate-50 dark:bg-slate-800">
+          <div className="relative w-full md:w-2/5 overflow-hidden rounded-[1.3rem] h-[180px] md:min-h-[300px] bg-slate-50 dark:bg-slate-800">
             <Link href={`/project/${project._id}`} aria-label={`Open ${project.title} details`}>
               <Image
                 src={project.image || "/placeholder.svg"}
@@ -151,18 +151,18 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
           </div>
 
           {/* Content */}
-          <div className="flex flex-col flex-1 p-2 md:p-6 lg:p-8 xl:p-10 text-slate-900 dark:text-slate-100">
-            <CardHeader className="p-0 mb-5">
-              <CardTitle className="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          <div className="flex w-full flex-col md:h-full md:w-3/5 md:justify-between p-2 md:p-6 md:pl-2 lg:p-8 lg:pl-3 xl:p-10 xl:pl-4 text-slate-900 dark:text-slate-100">
+            <CardHeader className="p-0">
+              <CardTitle className="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold mb-4  group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {project.title}
               </CardTitle>
-              <CardDescription className="text-slate-600 dark:text-slate-300 line-clamp-3 md:line-clamp-4 text-sm md:text-base leading-relaxed">
+              <CardDescription className="text-slate-600 dark:text-slate-300 line-clamp-3 text-sm md:text-base leading-relaxed">
                 {project.description}
               </CardDescription>
-              <p><strong className="">Role : </strong>{project?.role}</p>
+              <p className="pb-2"><strong className="">Role : </strong>{project?.role}</p>
             </CardHeader>
 
-            <CardContent className="p-0 mt-auto space-y-4">
+            <CardContent className="p-0 mt-6 md:mt-0 space-y-3">
               <div className="flex flex-wrap gap-2">
                 {project.technologies?.slice(0, 6).map((tech: string, i: number) => (
                   <span key={i} className="px-3 py-1 text-[10px] uppercase font-bold tracking-widest bg-slate-100 dark:bg-white/5 text-blue-600 dark:text-blue-400 border border-slate-300 dark:border-white/10 rounded-lg">
@@ -247,14 +247,7 @@ export default function ProjectsSection(): JSX.Element {
           >
             Featured <span className="text-[#FF7639]">Projects</span>
           </motion.h2>
-          <motion.div 
-            initial={{ width: 0 }}
-            whileInView={{ width: 100 }}
-            viewport={{ once: true }}
-            className="h-1 bg-[#8A63E5]/30 mx-auto mt-4 rounded-full relative overflow-hidden"
-          >
-             <div className="absolute inset-0 bg-[#8A63E5] w-1/2" />
-          </motion.div>
+          <div className="site-heading-divider mx-auto" />
         </div>
 
       <div className="relative w-full">
@@ -267,7 +260,7 @@ export default function ProjectsSection(): JSX.Element {
             Unable to load projects.
           </div>
         ) : (
-          <div id="project" className="flex flex-col items-center -mt-2 md:-mt-4 pb-6 md:pb-8">
+          <div id="project" className="flex flex-col items-center -mt-2 md:-mt-4 pb-3 md:pb-4">
             {projects?.map((project: Project, index: number) => (
               <ProjectCard
                 key={project._id || index}

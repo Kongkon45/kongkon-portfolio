@@ -14,7 +14,7 @@ const ScrollToTopComponent = () => {
           alignItems: "center",
           border: "2px solid #FF7639",
           background: "white",
-          padding: "5px",
+          padding: "3px",
           zIndex: 100,
         }}
         smooth

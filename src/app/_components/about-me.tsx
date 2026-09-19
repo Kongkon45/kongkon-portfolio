@@ -138,11 +138,11 @@ const AboutMeSection = () => {
 
           {/* Right: Bio Text */}
           <motion.div variants={fadeIn} className="space-y-8">
-            <div className="relative inline-block">
+            <div className="inline-block">
               <h2 className="site-heading">
                 About <span className="text-orange-500">Me</span>
               </h2>
-              <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-orange-500/50 to-violet-500/50 rounded-full" />
+              <div className="site-heading-divider" />
             </div>
 
             <div className="bg-[#FFF8F6] dark:bg-slate-900 border border-orange-100/50 dark:border-slate-700 rounded-[40px] p-5 md:p-8 lg:p-12 shadow-sm">

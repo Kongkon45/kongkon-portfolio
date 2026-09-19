@@ -233,20 +233,20 @@ const HeroSection = () => {
             </motion.div>
 
             <motion.div whileHover={buttonHover} whileTap={{ scale: 0.98 }}>
-              <Button
-                variant="outline"
-                className="border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white rounded-md px-8 h-10 md:h-11 font-bold shadow-lg hover:shadow-xl transition-all duration-300"
+              <Link
+                className="flex items-center gap-2"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://drive.google.com/file/d/1hz2z9zjvrtFuKtAmwNvTsdBRJRcBRhE8/view?usp=sharing"
               >
-                <Link
-                  className="flex items-center gap-2"
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://drive.google.com/file/d/1hz2z9zjvrtFuKtAmwNvTsdBRJRcBRhE8/view?usp=sharing"
+                <Button
+                  variant="outline"
+                  className="border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white rounded-md px-8 h-10 md:h-11 font-bold shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   Resume <LuDownload className="w-6 h-6 " />
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
         </motion.div>

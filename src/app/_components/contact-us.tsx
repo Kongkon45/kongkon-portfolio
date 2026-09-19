@@ -117,8 +117,8 @@ const ContactUsSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="site-container container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-20">
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-14">
+      <div className="site-container container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-6 md:py-8">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-10">
           {/* LEFT: Info Panel */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -133,12 +133,12 @@ const ContactUsSection = () => {
               Get In Touch
             </div>
 
-            <h2 className="mb-3 text-3xl md:text-4xl font-bold leading-snug tracking-tight text-slate-900 dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-bold leading-snug tracking-tight text-slate-900 dark:text-white">
               Let&apos;s Build{" "}
               <span className="text-orange-500">Something Great</span> Together
             </h2>
 
-            <p className="mb-5 max-w-[300px] text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+            <p className="mt-3 mb-5 max-w-[300px] text-sm leading-relaxed text-slate-500 dark:text-slate-400">
               Have a project in mind? I&apos;d love to hear about it. Fill out
               the form and I&apos;ll get back to you within 24 hours.
             </p>

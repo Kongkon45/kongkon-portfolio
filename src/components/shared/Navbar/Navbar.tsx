@@ -13,7 +13,7 @@ const navItems = [
   { name: "About Me", href: "#about" },
   { name: "My Skills", href: "#my-skills" },
   { name: "Technologies", href: "#technologies" },
-  { name: "Live Project", href: "#project" },
+  { name: "Live Project", href: "#projects" },
 ];
 
 export default function Navbar() {
@@ -54,16 +54,15 @@ export default function Navbar() {
       .filter(Boolean) as HTMLElement[];
 
     const onScroll = () => {
-      let currentSection = "/";
+      const activationPoint = window.innerHeight * 0.35;
+      const activeSection = [...sections]
+        .reverse()
+        .find((section) => {
+          const rect = section.getBoundingClientRect();
+          return rect.top <= activationPoint && rect.bottom > activationPoint;
+        });
 
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.35 && rect.bottom >= window.innerHeight * 0.2) {
-          currentSection = `#${section.id}`;
-        }
-      });
-
-      setActiveHref(currentSection);
+      setActiveHref(activeSection ? `#${activeSection.id}` : "/");
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -199,6 +198,7 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
+                aria-current={activeHref === item.href ? "page" : undefined}
                 onClick={(event) => {
                   event.preventDefault();
                   smoothScroll(item.href);
@@ -212,7 +212,7 @@ export default function Navbar() {
               >
                 {item.name}
                 <motion.div
-                  className={`absolute bottom-0 left-0 h-0.5 bg-white rounded-full transition-all duration-300 ${
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-primary rounded-full transition-all duration-300 ${
                     activeHref === item.href ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                   whileHover={{ width: activeHref === item.href ? "100%" : "100%" }}
@@ -270,6 +270,7 @@ export default function Navbar() {
               >
                 <Link
                   href={item.href}
+                  aria-current={activeHref === item.href ? "page" : undefined}
                   onClick={(event) => {
                     event.preventDefault();
                     smoothScroll(item.href);
@@ -278,8 +279,8 @@ export default function Navbar() {
                   }}
                   className={`text-sm font-semibold pb-3 border-b ${
                     activeHref === item.href
-                      ? "border-purple-500 text-purple-700 dark:text-purple-300"
-                      : "border-slate-200/70 dark:border-slate-700 text-slate-950 dark:text-slate-100 hover:text-purple-700 dark:hover:text-purple-200"
+                      ? "border-primary text-primary"
+                      : "border-slate-200/70 dark:border-slate-700 text-slate-950 dark:text-slate-100 hover:text-primary"
                   } transition-colors`}
                 >
                   {item.name}

@@ -40,7 +40,7 @@ export default function ContactFab() {
   ]
 
   return (
-    <div className="fixed right-6 bottom-16 z-50 flex flex-col items-center gap-3">
+    <div className="fixed right-6 bottom-24 z-50 flex flex-col items-center gap-3">
       <AnimatePresence>
         {open && (
           <motion.div
@@ -82,7 +82,7 @@ export default function ContactFab() {
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="flex items-center justify-center"
           >
-            {open ? <X className="w-6 md:w-7 h-6 md:h-7" /> : <MessageSquare className="w-6 md:w-7 h-6 md:h-7" />}
+            {open ? <X className="w-6 md:w-7 h-6 md:h-7" /> : <MessageSquare className="w-7 md:w-8 lg:w-9 h-7 md:h-8 lg:h-9" />}
           </motion.span>
         </button>
 

@@ -4,12 +4,19 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { LuDownload, LuFileCode2, LuMail, LuMapPin } from "react-icons/lu";
+import {
+  LuDownload,
+  LuFileCode2,
+  LuMail,
+  LuMapPin,
+  LuPhone,
+} from "react-icons/lu";
 import Link from "next/link";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const email = "kongkon4545@gmail.com";
+  const phone = "01778934545";
   const whatsappNumber = "8801778934545";
 
   const navLinks = [
@@ -70,7 +77,7 @@ const Footer = () => {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        <div className="py-20 text-center">
+        <div className="py-12 md:py-14 text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -115,25 +122,20 @@ const Footer = () => {
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <a
-                href={`mailto:${email}?subject=CV%20Request`}
-                aria-label="Request CV by email"
+              <Link
+                className="flex items-center gap-2"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://drive.google.com/file/d/1hz2z9zjvrtFuKtAmwNvTsdBRJRcBRhE8/view?usp=sharing"
               >
                 <Button
                   variant="outline"
                   className="border-violet-200 text-violet-600 hover:bg-violet-50 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-white/10 font-bold text-base md:text-lg px-10 py-5 md:py-6 rounded-xl border-2 w-[240px] flex items-center justify-center gap-2"
                 >
-                  <Link
-                    className="flex items-center gap-2"
-                    download
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://drive.google.com/file/d/1hz2z9zjvrtFuKtAmwNvTsdBRJRcBRhE8/view?usp=sharing"
-                  >
-                    Get My CV <LuDownload className="w-5 h-5" />
-                  </Link>
+                  Get My CV <LuDownload className="w-5 h-5" />
                 </Button>
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -145,7 +147,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left"
+          className="py-8 md:py-9 grid grid-cols-1 md:grid-cols-3 gap-7 text-center md:text-left"
         >
           <div className="space-y-3">
             <div className="flex items-center justify-center md:justify-start gap-2">
@@ -178,6 +180,21 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+            <div className="flex justify-center md:justify-start gap-3 pt-1">
+              {socials.map((item, i) => (
+                <motion.a
+                  key={i}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.label}
+                  whileHover={{ y: -4, scale: 1.1 }}
+                  className={`w-9 h-9 rounded-full ${item.color} text-white flex items-center justify-center shadow-md ${item.shadow} border-2 border-white dark:border-slate-800 transition-all text-sm`}
+                >
+                  {item.icon}
+                </motion.a>
+              ))}
+            </div>
           </div>
 
           <div className="space-y-3">
@@ -195,26 +212,19 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-center justify-center md:justify-start gap-2 text-sm text-slate-600 dark:text-slate-300">
+                <LuPhone className="w-4 h-4 text-emerald-500 shrink-0" />
+                <a
+                  href={`tel:${phone}`}
+                  className="hover:text-emerald-500 transition-colors"
+                >
+                  {phone}
+                </a>
+              </li>
+              <li className="flex items-center justify-center md:justify-start gap-2 text-sm text-slate-600 dark:text-slate-300">
                 <LuMapPin className="w-4 h-4 text-violet-500 shrink-0" />
                 <span>Dhaka, Bangladesh</span>
               </li>
             </ul>
-
-            <div className="flex justify-center md:justify-start gap-3 pt-1">
-              {socials.map((item, i) => (
-                <motion.a
-                  key={i}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={item.label}
-                  whileHover={{ y: -4, scale: 1.1 }}
-                  className={`w-9 h-9 rounded-full ${item.color} text-white flex items-center justify-center shadow-md ${item.shadow} border-2 border-white dark:border-slate-800 transition-all text-sm`}
-                >
-                  {item.icon}
-                </motion.a>
-              ))}
-            </div>
           </div>
         </motion.div>
 
