@@ -129,7 +129,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
   const scale = useTransform(progress, [start, 1], [1, targetScale]);
 
   return (
-    <div className="w-full flex items-center justify-center py-2 md:py-3 sticky top-16 md:top-20">
+    <div className="w-full flex items-center justify-center py-2 md:py-3 last:pb-10 md:last:pb-14 sticky top-16 md:top-20">
       <motion.div
         style={{
           scale,
@@ -137,21 +137,21 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
         }}
         className="relative w-full container origin-top px-4"
       >
-        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit md:h-[380px] px-4 md:px-6 shadow-lg dark:shadow-2xl">
+        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit px-4 md:px-6 shadow-lg dark:shadow-2xl">
           {/* Image */}
-          <div className="relative w-full md:w-2/5 overflow-hidden rounded-[1.3rem] h-[180px] md:min-h-[300px] bg-slate-50 dark:bg-slate-800">
+          <div className="relative w-full md:w-2/5 aspect-video shrink-0 self-start overflow-hidden rounded-[1.3rem] bg-slate-50 dark:bg-slate-800">
             <Link href={`/project/${project._id}`} aria-label={`Open ${project.title} details`}>
               <Image
                 src={project.image || "/placeholder.svg"}
                 alt={project.title}
                 fill
-                className="object-contain group-hover:scale-110 transition-transform duration-700"
+                className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
             </Link>
           </div>
 
           {/* Content */}
-          <div className="flex w-full flex-col md:h-full md:w-3/5 md:justify-between p-2 md:p-6 md:pl-2 lg:p-8 lg:pl-3 xl:p-10 xl:pl-4 text-slate-900 dark:text-slate-100">
+          <div className="flex w-full flex-col md:h-full md:w-3/5 md:justify-center p-2 md:px-6 md:py-4 md:pl-2 lg:px-8 lg:py-5 lg:pl-3 xl:px-10 xl:py-6 xl:pl-4 text-slate-900 dark:text-slate-100">
             <CardHeader className="p-0">
               <CardTitle className="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold mb-4  group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {project.title}
