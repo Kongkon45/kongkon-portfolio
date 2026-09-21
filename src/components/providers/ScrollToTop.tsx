@@ -14,7 +14,12 @@ const ScrollToTopComponent = () => {
           alignItems: "center",
           border: "2px solid #FF7639",
           background: "white",
-          padding: "3px",
+          width: "56px",
+          height: "56px",
+          borderRadius: "9999px",
+          padding: 0,
+          right: "24px",
+          bottom: "24px",
           zIndex: 100,
         }}
         smooth

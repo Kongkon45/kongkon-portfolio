@@ -74,7 +74,7 @@ export default function ContactFab() {
         <button
           aria-expanded={open}
           onClick={() => setOpen((s) => !s)}
-          className="w-12 md:w-14 lg:w-16 h-12 md:h-14 lg:h-16 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-500 shadow-lg flex items-center justify-center text-white transform-gpu transition-all hover:scale-105 active:scale-95"
+          className="h-14 w-14 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-500 shadow-lg flex items-center justify-center text-white transform-gpu transition-all hover:scale-105 active:scale-95"
         >
           <motion.span
             initial={{ rotate: 0, scale: 1 }}
@@ -82,7 +82,7 @@ export default function ContactFab() {
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="flex items-center justify-center"
           >
-            {open ? <X className="w-6 md:w-7 h-6 md:h-7" /> : <MessageSquare className="w-7 md:w-8 lg:w-9 h-7 md:h-8 lg:h-9" />}
+            {open ? <X className="h-7 w-7" /> : <MessageSquare className="h-7 w-7" />}
           </motion.span>
         </button>
 
