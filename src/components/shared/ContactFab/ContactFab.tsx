@@ -60,7 +60,7 @@ export default function ContactFab() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 8 }}
                 transition={{ delay: idx * 0.04 }}
-                className={`w-12 md:w-14 h-12 md:h-14 rounded-full flex items-center justify-center shadow-xl ${it.bg} hover:scale-105 transform-gpu transition-all`}
+                className={`w-12 md:w-14 h-12 md:h-14 rounded-full flex items-center justify-center shadow-md ${it.bg} hover:scale-105 transform-gpu transition-all`}
                 aria-label={it.label}
               >
                 {it.icon}
@@ -74,7 +74,7 @@ export default function ContactFab() {
         <button
           aria-expanded={open}
           onClick={() => setOpen((s) => !s)}
-          className="w-12 md:w-14 lg:w-16 h-12 md:h-14 lg:h-16 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-500 shadow-2xl flex items-center justify-center text-white transform-gpu transition-all hover:scale-105 active:scale-95"
+          className="w-12 md:w-14 lg:w-16 h-12 md:h-14 lg:h-16 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-500 shadow-lg flex items-center justify-center text-white transform-gpu transition-all hover:scale-105 active:scale-95"
         >
           <motion.span
             initial={{ rotate: 0, scale: 1 }}
@@ -88,7 +88,7 @@ export default function ContactFab() {
 
         {!open && (
           <div className="w-32 hidden md:flex absolute right-full top-1/2 -translate-y-1/2">
-            <div className="rounded-full bg-white/95 dark:bg-slate-900/95 px-4 py-2 shadow-xl text-slate-800 dark:text-slate-100 text-sm font-semibold select-none">
+            <div className="rounded-full bg-white/95 dark:bg-slate-900/95 px-4 py-2 shadow-md text-slate-800 dark:text-slate-100 text-sm font-semibold select-none">
               Contact us
             </div>
           </div>

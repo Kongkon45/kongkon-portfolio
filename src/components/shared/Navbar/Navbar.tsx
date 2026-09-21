@@ -164,7 +164,7 @@ export default function Navbar() {
         </div>
         
         {/* Content container */}
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 py-2 flex items-center justify-between relative z-10">
+        <div className="site-container py-2 flex items-center justify-between relative z-10">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -231,7 +231,7 @@ export default function Navbar() {
         >
             <Link href="#contact">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="h-10 hidden md:block bg-purple-500 hover:bg-purple-600 text-white rounded-full px-7 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button className="h-10 hidden md:block bg-purple-500 hover:bg-purple-600 text-white rounded-full px-7 font-semibold shadow-sm hover:shadow-md transition-all duration-300">
                 Hire Me
               </Button>
             </motion.div>
@@ -254,7 +254,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {open && (
           <motion.div
-            className="absolute top-[70px] left-3 right-3 bg-white/95 dark:bg-slate-900/95 rounded-2xl p-4 flex flex-col gap-4 text-slate-900 dark:text-slate-100 md:hidden shadow-lg backdrop-blur-sm border border-slate-200/70 dark:border-slate-700"
+            className="absolute top-[70px] left-3 right-3 bg-white/95 dark:bg-slate-900/95 rounded-2xl p-4 flex flex-col gap-4 text-slate-900 dark:text-slate-100 md:hidden shadow-md backdrop-blur-sm border border-slate-200/70 dark:border-slate-700"
             variants={mobileMenuVariants}
             initial="hidden"
             animate="visible"
@@ -294,7 +294,7 @@ export default function Navbar() {
               transition={{ delay: 0.3 }}
             >
               <Link href="#contact">
-                <Button className="w-full bg-purple-500 hover:bg-purple-600 text-white rounded-full mt-2 font-semibold shadow-lg">
+                <Button className="w-full bg-purple-500 hover:bg-purple-600 text-white rounded-full mt-2 font-semibold shadow-sm hover:shadow-md">
                   Hire Me
                 </Button>
               </Link>

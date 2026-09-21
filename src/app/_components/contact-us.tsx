@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import {
@@ -28,9 +28,24 @@ const formSchema = z.object({
 });
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "kongkon4545@gmail.com" },
-  { icon: PhoneCall, label: "Phone Number", value: "+8801778934545" },
-  { icon: MapPin, label: "Location", value: "Dhaka, Bangladesh" },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "kongkon4545@gmail.com",
+    href: "mailto:kongkon4545@gmail.com",
+  },
+  {
+    icon: PhoneCall,
+    label: "Phone Number",
+    value: "+8801778934545",
+    href: "tel:+8801778934545",
+  },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: "Dhaka, Bangladesh",
+    href: "https://www.google.com/maps/search/?api=1&query=Dhaka%2C%20Bangladesh",
+  },
   { icon: Clock, label: "Response time", value: "Within 24 hours" },
 ];
 
@@ -75,7 +90,7 @@ const ContactUsSection = () => {
   return (
     <section
       id="contact"
-      className="site-section relative w-full bg-white dark:bg-slate-950 px-6 overflow-hidden"
+      className="site-section relative w-full bg-white dark:bg-slate-950 overflow-hidden"
     >
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
@@ -117,7 +132,7 @@ const ContactUsSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="site-container container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-6 md:py-8">
+      <div className="site-container relative z-10 py-6 md:py-8">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-10">
           {/* LEFT: Info Panel */}
           <motion.div
@@ -145,14 +160,14 @@ const ContactUsSection = () => {
 
             {/* Contact Info Cards */}
             <div className="w-full max-w-[360px] flex flex-col gap-3">
-              {contactInfo?.map(({ icon: Icon, label, value }, i) => (
+              {contactInfo?.map(({ icon: Icon, label, value, href }, i) => (
                 <motion.div
                   key={label}
                   initial={{ opacity: 0, x: -16 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="flex items-center gap-3 rounded-xl border border-slate-100 bg-white/90 px-4 py-2 dark:border-slate-800 dark:bg-slate-900/80"
+                  className="group flex items-center gap-3 rounded-xl border border-slate-100 bg-white/90 px-4 py-2 dark:border-slate-800 dark:bg-slate-900/80"
                 >
                   <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-orange-100 bg-orange-50 text-orange-500 dark:border-slate-700 dark:bg-slate-800 dark:text-orange-400">
                     <Icon size={15} />
@@ -161,9 +176,20 @@ const ContactUsSection = () => {
                     <p className="text-[10px] font-medium uppercase tracking-wider text-slate-400 dark:text-slate-500">
                       {label}
                     </p>
-                    <p className="text-sm font-medium text-slate-700 dark:text-slate-200">
-                      {value}
-                    </p>
+                    {href ? (
+                      <a
+                        href={href}
+                        target={href.startsWith("http") ? "_blank" : undefined}
+                        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                        className="text-sm font-medium text-slate-700 transition-colors hover:text-orange-500 dark:text-slate-200 dark:hover:text-orange-400"
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="text-sm font-medium text-slate-700 transition-colors group-hover:text-orange-500 dark:text-slate-200 dark:group-hover:text-orange-400">
+                        {value}
+                      </p>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -183,7 +209,7 @@ const ContactUsSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-full lg:w-[56%]"
           >
-            <div className="rounded-2xl border border-slate-100 bg-white shadow-xl shadow-slate-100/60 dark:border-slate-800 dark:bg-slate-900 dark:shadow-none">
+            <div className="rounded-2xl border border-slate-100 bg-white shadow-md shadow-slate-100/60 dark:border-slate-800 dark:bg-slate-900 dark:shadow-none">
               {/* Card Header */}
               <div className="border-b border-slate-100 px-6 py-5 dark:border-slate-800">
                 <h3 className="text-base font-semibold text-slate-900 dark:text-white">
@@ -295,7 +321,7 @@ const ContactUsSection = () => {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-orange-500 text-sm font-semibold text-white shadow-md shadow-orange-100 transition-all duration-200 hover:bg-orange-400 hover:-translate-y-0.5 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 dark:shadow-orange-900/30"
+                      className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-orange-500 text-sm font-semibold text-white shadow-sm shadow-orange-100 transition-all duration-200 hover:bg-orange-400 hover:-translate-y-0.5 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 dark:shadow-orange-900/30"
                     >
                       <Send size={14} />
                       {isSubmitting ? "Sending..." : "Contact Me"}
@@ -313,7 +339,6 @@ const ContactUsSection = () => {
         </div>
       </div>
 
-      <ToastContainer position="bottom-right" />
     </section>
   );
 };

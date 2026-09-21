@@ -36,7 +36,7 @@ const AboutMeSection = () => {
   return (
     <motion.section
       id="about"
-      className="site-section relative w-full bg-white dark:bg-slate-950 px-6 overflow-hidden"
+      className="site-section relative w-full bg-white dark:bg-slate-950 overflow-hidden"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
@@ -60,7 +60,7 @@ const AboutMeSection = () => {
           dark:from-orange-500/15 dark:to-violet-500/15"
       />
 
-      <div className="mx-auto max-w-7xl relative z-10">
+      <div className="site-container relative z-10">
 
         {/* ── Top: Illustration + Bio ─────────────────────────────────────── */}
         <div className="grid gap-12 lg:grid-cols-2 items-center mb-10">
@@ -88,7 +88,7 @@ const AboutMeSection = () => {
               <motion.div
                 variants={floatingAnimation(0)}
                 initial="initial" animate="animate"
-                className="absolute top-[10%] left-[5%] px-3 py-2 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-2"
+                className="absolute top-[10%] left-[5%] px-3 py-2 bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 flex items-center gap-2"
               >
                 <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" />
                 <span className="text-xs font-bold text-slate-700 dark:text-slate-200">React.js</span>
@@ -98,7 +98,7 @@ const AboutMeSection = () => {
               <motion.div
                 variants={floatingAnimation(0.6)}
                 initial="initial" animate="animate"
-                className="absolute top-[15%] right-[5%] px-3 py-2 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-2"
+                className="absolute top-[15%] right-[5%] px-3 py-2 bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 flex items-center gap-2"
               >
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
                 <span className="text-xs font-bold text-slate-700 dark:text-slate-200">Node.js</span>
@@ -108,7 +108,7 @@ const AboutMeSection = () => {
               <motion.div
                 variants={floatingAnimation(1.1)}
                 initial="initial" animate="animate"
-                className="absolute bottom-[22%] left-[-4%] px-3 py-2 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-2"
+                className="absolute bottom-[22%] left-[-4%] px-3 py-2 bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 flex items-center gap-2"
               >
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
                 <span className="text-xs font-bold text-slate-700 dark:text-slate-200">MongoDB</span>
@@ -118,7 +118,7 @@ const AboutMeSection = () => {
               <motion.div
                 variants={floatingAnimation(1.6)}
                 initial="initial" animate="animate"
-                className="absolute top-[42%] right-[-7%] px-3 py-2 bg-slate-900 dark:bg-slate-700 rounded-2xl shadow-xl flex items-center gap-2"
+                className="absolute top-[42%] right-[-7%] px-3 py-2 bg-slate-900 dark:bg-slate-700 rounded-2xl shadow-md flex items-center gap-2"
               >
                 <span className="w-2.5 h-2.5 rounded-full bg-white" />
                 <span className="text-xs font-bold text-white">Next.js</span>
@@ -128,7 +128,7 @@ const AboutMeSection = () => {
               <motion.div
                 variants={floatingAnimation(2.1)}
                 initial="initial" animate="animate"
-                className="absolute bottom-[10%] right-[10%] px-3 py-2 bg-blue-600 rounded-2xl shadow-xl flex items-center gap-2"
+                className="absolute bottom-[10%] right-[10%] px-3 py-2 bg-blue-600 rounded-2xl shadow-md flex items-center gap-2"
               >
                 <span className="text-xs font-bold text-white">TS</span>
                 <span className="text-xs font-bold text-white">TypeScript</span>

@@ -135,9 +135,9 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
           scale,
           top: `calc(4vh + ${index * 14}px)`,
         }}
-        className="relative w-full container origin-top px-4"
+        className="site-container relative origin-top"
       >
-        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit px-4 md:px-6 shadow-lg dark:shadow-2xl">
+        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit px-4 md:px-6 shadow-md dark:shadow-md">
           {/* Image */}
           <div className="relative w-full md:w-2/5 aspect-video shrink-0 self-start overflow-hidden rounded-[1.3rem] bg-slate-50 dark:bg-slate-800">
             <Link href={`/project/${project._id}`} aria-label={`Open ${project.title} details`}>
@@ -152,14 +152,14 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
 
           {/* Content */}
           <div className="flex w-full flex-col md:h-full md:w-3/5 md:justify-center p-2 md:px-6 md:py-4 md:pl-2 lg:px-8 lg:py-5 lg:pl-3 xl:px-10 xl:py-6 xl:pl-4 text-slate-900 dark:text-slate-100">
-            <CardHeader className="p-0">
+            <CardHeader className="p-0 mb-2">
               <CardTitle className="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold mb-4  group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {project.title}
               </CardTitle>
               <CardDescription className="text-slate-600 dark:text-slate-300 line-clamp-3 text-sm md:text-base leading-relaxed">
                 {project.description}
               </CardDescription>
-              <p className="pb-2"><strong className="">Role : </strong>{project?.role}</p>
+              {/* <p className="pb-2"><strong className="">Role : </strong>{project?.role}</p> */}
             </CardHeader>
 
             <CardContent className="p-0 mt-6 md:mt-0 space-y-3">
@@ -182,7 +182,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
                     <FaGithub className="mr-2 h-4 w-4" /> Source Code
                   </a>
                 </Button>
-                <Button asChild className="flex-1 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 border-none rounded-xl h-10 md:h-12 shadow-lg shadow-blue-500/10">
+                <Button asChild className="flex-1 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 border-none rounded-xl h-10 md:h-12 shadow-sm shadow-blue-500/10">
                   <a
                     href={project.liveLink || "#"}
                     target="_blank"
@@ -237,6 +237,7 @@ export default function ProjectsSection(): JSX.Element {
             dark:from-orange-500/15 dark:to-violet-500/15"
         />
       </div>
+      <div className="site-container relative z-10">
         {/* Header */}
         <div className="text-center pt-2 pb-3 md:pb-4">
            <motion.h2 
@@ -249,6 +250,8 @@ export default function ProjectsSection(): JSX.Element {
           </motion.h2>
           <div className="site-heading-divider mx-auto" />
         </div>
+
+      </div>
 
       <div className="relative w-full">
         {isLoading ? (

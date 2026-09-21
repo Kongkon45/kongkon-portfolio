@@ -112,7 +112,7 @@ export default function TechnologySection() {
          </svg>
       </div>
 
-      <div className="site-container container mx-auto px-4 relative z-10">
+      <div className="site-container relative z-10">
         {/* Header */}
         <div className="text-center mb-10">
           <motion.h2 

@@ -6,18 +6,20 @@ import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import {
   LuDownload,
-  LuFileCode2,
   LuMail,
   LuMapPin,
   LuPhone,
 } from "react-icons/lu";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const email = "kongkon4545@gmail.com";
   const phone = "01778934545";
   const whatsappNumber = "8801778934545";
+  const locationMapUrl =
+    "https://www.google.com/maps/search/?api=1&query=Dhaka%2C%20Bangladesh";
 
   const navLinks = [
     { label: "About", href: "#about" },
@@ -76,7 +78,7 @@ const Footer = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="site-container relative z-10">
         <div className="py-12 md:py-14 text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -115,7 +117,7 @@ const Footer = () => {
           >
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
               <Link href="#contact">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-base md:text-lg px-12 py-5 md:py-6 rounded-xl shadow-lg shadow-orange-100 w-[240px]">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-base md:text-lg px-12 py-5 md:py-6 rounded-xl shadow-sm shadow-orange-100 w-[240px]">
                   Hire Me
                 </Button>
               </Link>
@@ -149,18 +151,28 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="py-8 md:py-9 grid grid-cols-1 md:grid-cols-3 gap-7 text-center md:text-left"
         >
-          <div className="space-y-3">
-            <div className="flex items-center justify-center md:justify-start gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-400 to-violet-500 flex items-center justify-center">
-                <LuFileCode2 className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-lg font-extrabold text-slate-900 dark:text-white tracking-tight">
-                Kongkon<span className="text-orange-500">.</span>
+          <div className="space-y-1">
+            <Link
+              href="/"
+              aria-label="Kongkon home"
+              className="inline-flex items-center justify-center md:justify-start"
+            >
+              <Image
+                src="/assets/images/logo.png"
+                alt="Kongkon"
+                width={100}
+                height={100}
+                className="h-14 w-14 object-contain"
+              />
+              <span className="ml-2 text-lg font-extrabold tracking-tight bg-gradient-to-r from-[#e6007e] via-[#6d1b8e] to-[#f59e0b] bg-clip-text text-transparent">
+                Kongkon Jowarder
               </span>
-            </div>
+            </Link>
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-              Full Stack Developer specialising in the MERN stack. Turning ideas
-              into fast, scalable web apps.
+              {/* Full Stack Developer specialising in the MERN stack. Turning ideas
+              into fast, scalable web apps. */}
+
+              Building modern and scalable web applications with a strong focus on seamless frontend experiences and reliable backend systems.
             </p>
           </div>
 
@@ -189,7 +201,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label={item.label}
                   whileHover={{ y: -4, scale: 1.1 }}
-                  className={`w-9 h-9 rounded-full ${item.color} text-white flex items-center justify-center shadow-md ${item.shadow} border-2 border-white dark:border-slate-800 transition-all text-sm`}
+                  className={`w-9 h-9 rounded-full ${item.color} text-white flex items-center justify-center shadow-sm ${item.shadow} border-2 border-white dark:border-slate-800 transition-all text-sm`}
                 >
                   {item.icon}
                 </motion.a>
@@ -222,20 +234,22 @@ const Footer = () => {
               </li>
               <li className="flex items-center justify-center md:justify-start gap-2 text-sm text-slate-600 dark:text-slate-300">
                 <LuMapPin className="w-4 h-4 text-violet-500 shrink-0" />
-                <span>Dhaka, Bangladesh</span>
+                <a
+                  href={locationMapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-violet-500 transition-colors"
+                >
+                  Dhaka, Bangladesh
+                </a>
               </li>
             </ul>
           </div>
         </motion.div>
 
         <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-700 to-transparent" />
-        <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400 dark:text-slate-500">
+        <div className="py-6 flex items-center justify-center text-xs text-slate-400 dark:text-slate-500">
           <span>© {currentYear} Kongkon Jowarder. All rights reserved.</span>
-          <span>
-            Built with{" "}
-            <span className="text-orange-500 font-semibold">Next.js</span> &amp;{" "}
-            <span className="text-violet-500 font-semibold">Tailwind CSS</span>
-          </span>
         </div>
       </div>
     </footer>

@@ -132,7 +132,7 @@ const MySkillsSection = () => {
   return (
     <section
       id="my-skills"
-      className="site-section relative w-full bg-white dark:bg-slate-950 px-6 overflow-hidden"
+      className="site-section relative w-full bg-white dark:bg-slate-950 overflow-hidden"
     >
       {/* Dot-grid pattern */}
       <div
@@ -152,7 +152,7 @@ const MySkillsSection = () => {
           dark:from-orange-500/15 dark:to-violet-500/15"
       />
 
-      <div className="mx-auto max-w-6xl relative z-10">
+      <div className="site-container relative z-10">
 
         {/* Heading */}
         <motion.div
@@ -193,7 +193,7 @@ const MySkillsSection = () => {
                   className={`
                     relative flex flex-col h-full rounded-2xl bg-white dark:bg-slate-900
                     border border-slate-100 dark:border-slate-700 border-b-4 ${config.border}
-                    shadow-md hover:shadow-xl ${config.glow}
+                    shadow-sm hover:shadow-md ${config.glow}
                     transition-shadow duration-300 p-5 md:p-6
                     overflow-hidden
                   `}
@@ -208,7 +208,7 @@ const MySkillsSection = () => {
                       w-14 h-14 rounded-2xl mb-5
                       ${config.iconBg}
                       ring-4 ${config.ring}
-                      shadow-lg
+                      shadow-sm
                     `}
                   >
                     <Icon className="w-6 h-6 text-white" strokeWidth={2} />

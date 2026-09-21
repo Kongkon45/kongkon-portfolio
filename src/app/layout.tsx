@@ -35,7 +35,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <Navbar />
           {children}
-           <ToastContainer position="bottom-right"/>
+           <ToastContainer position="bottom-right" autoClose={4000} limit={1} />
           <ContactFab />
           <ScrollToTopComponent/>
           <Footer />

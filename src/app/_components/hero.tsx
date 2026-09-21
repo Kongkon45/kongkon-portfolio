@@ -16,7 +16,7 @@ const iconList = [
     label: "Facebook",
     bgColor: "#1877F2",
     hoverBgColor: "#155db4",
-    url: "https://www.facebook.com/kongkon.jowarder/",
+    url: "https://www.facebook.com/kongkon.jowarder",
   },
   {
     icon: <IoLogoWhatsapp key="wa" />,
@@ -30,7 +30,7 @@ const iconList = [
     label: "LinkedIn",
     bgColor: "#0A66C2",
     hoverBgColor: "#084fa1",
-    url: "www.linkedin.com/in/kongkon-jowarder-50a12725b",
+    url: "https://www.linkedin.com/in/kongkon-jowarder-50a12725b",
   },
   {
     icon: <FaGithub key="github" />,
@@ -122,7 +122,7 @@ const HeroSection = () => {
   }, []);
   return (
     <motion.section
-      className="site-section w-full flex justify-center px-4 relative bg-white dark:bg-slate-950 overflow-hidden"
+      className="site-section w-full flex justify-center relative bg-white dark:bg-slate-950 overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
@@ -146,11 +146,11 @@ const HeroSection = () => {
           dark:from-orange-500/15 dark:to-violet-500/15"
       />
 
-      <div className="w-full max-w-6xl grid md:grid-cols-5 gap-4 items-center relative z-10">
+      <div className="site-container grid md:grid-cols-5 gap-4 items-center relative z-10">
         {/* LEFT CONTENT */}
         <motion.div className="md:col-span-3 space-y-5" variants={fadeUp}>
           <motion.div
-            className="inline-block px-4 py-1 bg-green-100 text-green-600 text-xs rounded-full shadow-lg dark:bg-emerald-900 dark:text-emerald-200"
+            className="inline-block px-4 py-1 bg-green-100 text-green-600 text-xs rounded-full shadow-sm dark:bg-emerald-900 dark:text-emerald-200"
             variants={badgeFromTop}
             whileHover={{
               scale: 1.05,
@@ -202,7 +202,7 @@ const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.label}
-                  className="absolute inset-1 lg:inset-[5px] rounded-full shadow-md flex items-center justify-center text-white transition-all duration-300 hover:shadow-lg"
+                  className="absolute inset-1 lg:inset-[5px] rounded-full shadow-sm flex items-center justify-center text-white transition-all duration-300 hover:shadow-md"
                   style={{
                     background: `linear-gradient(to bottom, ${item.bgColor}, #8b5cf6)`,
                   }}
@@ -226,7 +226,7 @@ const HeroSection = () => {
           <motion.div className="flex flex-wrap gap-4 pt-3" variants={fadeUp}>
             <motion.div whileHover={buttonHover} whileTap={{ scale: 0.98 }}>
               <Link href="#contact">
-                <Button className="bg-orange-500 hover:bg-orange-600 rounded-md px-8 h-10 md:h-11 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button className="bg-orange-500 hover:bg-orange-600 rounded-md px-8 h-10 md:h-11 text-white font-bold shadow-sm hover:shadow-md transition-all duration-300">
                   Hire Me
                 </Button>
               </Link>
@@ -242,7 +242,7 @@ const HeroSection = () => {
               >
                 <Button
                   variant="outline"
-                  className="border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white rounded-md px-8 h-10 md:h-11 font-bold shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white rounded-md px-8 h-10 md:h-11 font-bold shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   Resume <LuDownload className="w-6 h-6 " />
                 </Button>
@@ -283,80 +283,43 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Ultra-Premium Scroll Indicator */}
-      <motion.div
+      {/* Scroll-to-content cue */}
+      <motion.a
+        href="#about"
+        aria-label="Scroll to the About Me section"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
-        className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none"
+        className="group absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center rounded-full px-3 py-2 text-slate-500 transition-colors hover:text-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 dark:text-slate-400 dark:hover:text-orange-400 dark:focus-visible:ring-offset-slate-950"
       >
-        <div className="relative group flex flex-col items-center">
-          {/* Outer Glowing Mouse Body */}
-          <div className="relative w-[30px] h-[54px] md:w-[32px] md:h-[58px] border-[1px] border-slate-200/80 rounded-full flex justify-center p-[3px] bg-white/10 backdrop-blur-[2px]">
-            {/* Inner "Liquid" Scroll Track */}
-            <div className="w-full h-full rounded-full bg-slate-50/50 relative overflow-hidden">
-              <motion.div
-                animate={{
-                  y: ["-100%", "200%"],
-                  opacity: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 2.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute left-1/2 -translate-x-1/2 w-[3px] h-[40%] bg-gradient-to-b from-orange-400 via-orange-500 to-purple-600 rounded-full shadow-[0_0_12px_rgba(249,115,22,0.5)]"
-              />
-            </div>
-
-            {/* Subtle Reflection */}
-            <div className="absolute top-[15%] left-[20%] w-[4px] h-[10px] bg-white opacity-20 rounded-full blur-[1px]" />
+        <div className="flex flex-col items-center">
+          <div className="relative flex h-11 w-7 justify-center rounded-full border-2 border-primary bg-white/80 pt-2 backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-1 dark:bg-slate-900/70">
+            <motion.span
+              animate={{ y: [0, 12, 0], opacity: [1, 0.35, 1] }}
+              transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+              className="h-2 w-1.5 rounded-full bg-primary"
+            />
           </div>
-
-          {/* Staggered Pulsing Chevrons */}
-          <div className="mt-4 flex flex-col items-center">
-            {[0, 1].map((i) => (
-              <motion.div
-                key={i}
-                animate={{
-                  y: [0, 6, 0],
-                  opacity: [0.1, 0.6, 0.1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: i * 0.4,
-                  ease: "easeInOut",
-                }}
-                className="text-orange-500/60"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className={i === 1 ? "-mt-3" : ""}
-                >
-                  <path d="M7 10l5 5 5-5" />
-                </svg>
-              </motion.div>
-            ))}
-          </div>
+          <motion.svg
+            animate={{ y: [0, 4, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            className="mt-1 h-4 w-4 text-primary"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+          >
+            <path d="m7 10 5 5 5-5" />
+          </motion.svg>
         </div>
 
-        {/* Minimalist Text */}
-        <motion.span
-          animate={{ opacity: [0.4, 0.7, 0.4] }}
-          transition={{ duration: 3, repeat: Infinity }}
-          className="mt-1 text-[7px] md:text-[8px] font-black tracking-[0.8em] text-slate-400 uppercase select-none"
-        >
-          Explore More
-        </motion.span>
-      </motion.div>
+        <span className="mt-1 text-[10px] font-bold uppercase tracking-[0.24em]">
+          Explore
+        </span>
+      </motion.a>
     </motion.section>
   );
 };
