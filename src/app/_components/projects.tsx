@@ -140,7 +140,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
         <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit px-4 md:px-6 shadow-md dark:shadow-md">
           {/* Image */}
           <div className="relative w-full md:w-2/5 aspect-video shrink-0 self-start overflow-hidden rounded-[1.3rem] bg-slate-50 dark:bg-slate-800">
-            <Link href={`/project/${project._id}`} aria-label={`Open ${project.title} details`}>
+            <Link target="_blank" href={project?.liveLink} aria-label={`Open ${project.title} details`}>
               <Image
                 src={project.image || "/placeholder.svg"}
                 alt={project.title}

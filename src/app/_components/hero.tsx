@@ -176,7 +176,7 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.h2
-            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-normal bg-gradient-to-r from-orange-500 to-purple-500 text-transparent bg-clip-text"
+            className="text-3xl sm:text-[32px] md:text-5xl lg:text-6xl font-bold leading-normal bg-gradient-to-r from-orange-500 to-purple-500 text-transparent bg-clip-text"
             variants={fadeUp}
           >
             {currentText}
@@ -238,7 +238,7 @@ const HeroSection = () => {
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://drive.google.com/file/d/1WfofmHFJzuifYQCKV44H5zvcdNVwTZ-U/view?usp=sharing"
+                href="https://drive.google.com/file/d/1siw72-KXFqBUMmHzWVcoCd1XbY8GWBVJ/view?usp=sharing"
               >
                 <Button
                   variant="outline"
@@ -253,7 +253,7 @@ const HeroSection = () => {
 
         {/* RIGHT IMAGE */}
         <motion.div
-          className="md:col-span-2 relative flex justify-center"
+          className="hidden md:flex md:col-span-2 relative justify-center"
           variants={fadeUp}
           whileHover={{
             y: -10,
@@ -290,7 +290,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
-        className="group absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center rounded-full px-3 py-2 text-slate-500 transition-colors hover:text-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 dark:text-slate-400 dark:hover:text-orange-400 dark:focus-visible:ring-offset-slate-950"
+        className="group absolute bottom-4 md:bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center rounded-full px-3 py-2 text-slate-500 transition-colors hover:text-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 dark:text-slate-400 dark:hover:text-orange-400 dark:focus-visible:ring-offset-slate-950 md:flex"
       >
         <div className="flex flex-col items-center">
           <div className="relative flex h-11 w-7 justify-center rounded-full border-2 border-primary bg-white/80 pt-2 backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-1 dark:bg-slate-900/70">

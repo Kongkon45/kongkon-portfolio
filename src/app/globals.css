@@ -117,7 +117,7 @@ body {
 
 @media (min-width: 768px) {
   .site-heading {
-    font-size: 3rem; /* 48px */
+    font-size: 48px;
   }
 }
 
