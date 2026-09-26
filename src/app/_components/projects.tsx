@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+// import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
@@ -39,7 +39,7 @@ const projectsFallback: Project[] = [
     title: "Analytic Soccer",
     description:
       "A football analytics platform featuring dynamic player profiles, performance statistics, subscription payments, and a role-protected admin dashboard.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth", "Paypal"],
     role: "Frontend Developer",
     image: "/assets/images/projects/analytic_soccer.jpeg",
     githubLink: "https://github.com/Kongkon-79/claude-website.git",
@@ -61,7 +61,7 @@ const projectsFallback: Project[] = [
     title: "GolfKO — Golf Tournament Platform",
     description:
       "A multi-role golf tournament platform for creating paid events, managing participants, generating draws, scheduling rounds, and tracking results through player, organizer, and admin dashboards.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth", "Stripe"],
     role: "Frontend Developer",
     image: "/assets/images/projects/golfko.jpeg",
     githubLink: "https://github.com/Kongkon-79/matchplaygolf_frontend.git",
@@ -83,7 +83,7 @@ const projectsFallback: Project[] = [
     title: "AI Car Check — UK Vehicle History Platform",
     description:
       "A UK vehicle-history platform providing MOT, tax, mileage, safety, and ownership insights, with premium reports, Stripe payments, AI assistance, and a complete admin dashboard.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth", "Stripe"],
     role: "Frontend Developer",
     image: "/assets/images/projects/ai_car_check.jpeg",
     githubLink: "https://github.com/Kongkon-79/kashhussain-website.git",
@@ -94,23 +94,23 @@ const projectsFallback: Project[] = [
     title: "Perrystown Orthodontics — Healthcare Booking Platform",
     description:
       "A responsive orthodontic care platform featuring consultation booking, dentist referrals, dynamic treatment content, and a comprehensive CMS-style admin dashboard.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth", "Stripe"],
     role: "Frontend Developer",
     image: "/assets/images/projects/Perrys.jpeg",
     githubLink: "https://github.com/Kongkon-79/dr_jameshman_frontend.git",
     liveLink: "https://perrystownorthodontics.com",
   },
-   {
-    _id: "6",
-    title: "Axiom Wellness",
-    description:
-      "A responsive research-products e-commerce platform featuring advanced product discovery, persistent cart management, Stripe and Cash on Delivery checkout, customer order tracking, and a data-driven admin dashboard.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth"],
-    role: "Frontend Developer",
-    image: "/assets/images/projects/axiom-wellness.png",
-    githubLink: "https://github.com/Kongkon-79/mireyags-website.git",
-    liveLink: "https://axiomwellness.shop",
-  },
+  //  {
+  //   _id: "6",
+  //   title: "Axiom Wellness",
+  //   description:
+  //     "A responsive research-products e-commerce platform featuring advanced product discovery, persistent cart management, Stripe and Cash on Delivery checkout, customer order tracking, and a data-driven admin dashboard.",
+  //   technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "NextAuth"],
+  //   role: "Frontend Developer",
+  //   image: "/assets/images/projects/axiom-wellness.png",
+  //   githubLink: "https://github.com/Kongkon-79/mireyags-website.git",
+  //   liveLink: "https://axiomwellness.shop",
+  // },
 
   
  
@@ -172,7 +172,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
               </div>
 
               <div className="flex gap-4 pt-1 md:pt-4">
-                <Button asChild variant="outline" className="flex-1 bg-transparent border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/5 rounded-xl h-10 md:h-12">
+                {/* <Button asChild variant="outline" className="flex-1 bg-transparent border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/5 rounded-xl h-10 md:h-12">
                   <a
                     href={project.githubLink || "#"}
                     target="_blank"
@@ -181,7 +181,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
                   >
                     <FaGithub className="mr-2 h-4 w-4" /> Source Code
                   </a>
-                </Button>
+                </Button> */}
                 <Button asChild className="flex-1 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 border-none rounded-xl h-10 md:h-12 shadow-sm shadow-blue-500/10">
                   <a
                     href={project.liveLink || "#"}

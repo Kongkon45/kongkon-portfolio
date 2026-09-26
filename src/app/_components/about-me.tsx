@@ -147,11 +147,11 @@ const AboutMeSection = () => {
 
             <div className="bg-[#FFF8F6] dark:bg-slate-900 border border-orange-100/50 dark:border-slate-700 rounded-[40px] p-5 md:p-8 lg:p-12 shadow-sm">
               <p className="text-slate-600 dark:text-slate-300 text-[15px] text-justify md:text-lg leading-relaxed xl:text-xl">
-                I&apos;m a passionate <span className="font-semibold text-orange-500">Full Stack Developer</span> with
+                I am a passionate <span className="font-semibold text-orange-500">Full Stack Developer</span> with
                 3+ years of professional experience building scalable, production-ready web applications using the
                 <span className="font-semibold text-violet-500"> MERN stack</span>. I craft clean, performant
                 frontends with React & Next.js, design robust REST APIs with Node.js & Express, and manage data
-                with MongoDB and MySQL. I love turning complex problems into simple, elegant digital solutions —
+                with MongoDB and Mongoose. I love turning complex problems into simple, elegant digital solutions
                 from architecture to deployment.
               </p>
             </div>
