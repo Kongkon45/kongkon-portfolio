@@ -129,7 +129,7 @@ const Footer = () => {
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://drive.google.com/file/d/1dhMBq0EDJXOsWxZQRNMT90RuPWM0FvqA/view?usp=sharing"
+                href="https://drive.google.com/file/d/1oqZt2MyWxniyljpj9BoMd39nJZ3dzjWs/view?usp=sharing"
               >
                 <Button
                   variant="outline"
